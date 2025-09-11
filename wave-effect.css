@@ -1,0 +1,66 @@
+/* --- 海浪效果 CSS (Remote CSS) --- */
+/* 將此檔案上傳至您的 GitHub，然後將 URL 貼到您網站的後台 */
+
+/* 主要容器：您需要將這個 .ocean-container 類別加到您的區塊上 */
+.ocean-container {
+    width: 100%;
+    height: 300px; /* 您可以自行調整總高度 */
+    position: relative;
+    background-color: white; /* 上半部固定為白色背景 */
+    overflow: hidden; /* 這是必要的，用來隱藏超出範圍的動畫 */
+}
+
+/* 波浪 SVG 的容器 */
+.waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* 波浪區域的高度 */
+    min-height: 100px;
+    max-height: 150px;
+}
+
+/* 動畫的群組 */
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+/* 各層波浪的獨立動畫設定 */
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+/* 定義水平移動的動畫 */
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px,0,0);
+    }
+    100% { 
+        transform: translate3d(85px,0,0);
+    }
+}
+
+/* 手機版響應式調整 */
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+}
