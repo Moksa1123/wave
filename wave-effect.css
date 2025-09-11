@@ -1,5 +1,4 @@
 /* --- 海浪效果 CSS (Remote CSS) --- */
-/* 將此檔案上傳至您的 GitHub，然後將 URL 貼到您網站的後台 */
 
 /* 主要容器：您需要將這個 .ocean-container 類別加到您的區塊上 */
 .ocean-container {
@@ -64,3 +63,4 @@
         min-height: 40px;
     }
 }
+
