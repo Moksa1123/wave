@@ -89,3 +89,30 @@
   to { transform: translateX(-50%); }
 }
 
+/* 【已新增】RWD 響應式設計：針對手機等小螢幕裝置調整高度 */
+@media (max-width: 768px) {
+  .ocean-container {
+    height: 150px !important; /* 手機版使用較小的高度 */
+  }
+
+  .wave {
+    height: 100px !important;
+    background-size: 50% 100px !important;
+  }
+
+  .wave.wave2 {
+    height: 110px !important;
+    background-size: 50% 110px !important;
+  }
+
+  .wave.wave3 {
+    height: 120px !important;
+    background-size: 50% 120px !important;
+  }
+
+  .wave.wave4 {
+    height: 130px !important;
+    background-size: 50% 130px !important;
+  }
+}
+
