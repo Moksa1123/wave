@@ -1,26 +1,28 @@
 /*
- * 全新純 CSS 海浪效果
- * 這個版本不需要 SVG，可以避免在編輯器中儲存失敗的問題。
+ * 【強化版】純 CSS 海浪效果
+ * 這個版本增加了 !important 規則來對抗佈景主題的樣式覆蓋問題。
  */
 
 /* 主要容器，用來建立海浪的視窗 */
 .ocean-container {
-  position: relative; /* 讓內部元素可以對齊 */
-  width: 100%;
-  height: 200px; /* 您可以調整海浪的高度 */
-  background: #f0f8ff; /* 海浪上方的背景色 */
-  overflow: hidden; /* 隱藏超出範圍的波浪，這是最重要的部分 */
+  position: relative !important;
+  width: 100% !important;
+  height: 200px !important; /* 確保容器有高度 */
+  background: #f0f8ff;
+  overflow: hidden !important; /* 確保波浪被裁切 */
+  z-index: 0; /* 確保它不會蓋到其他內容 */
 }
 
 /* 這是構成每一層波浪的基礎樣式 */
 .wave {
-  background: rgba(30, 58, 138, 0.7); /* 波浪的基礎顏色 */
-  border-radius: 1000%; /* 關鍵：用超大圓角做出圓弧 */
-  position: absolute;
-  width: 200%; /* 波浪要非常寬，才能左右移動 */
-  height: 200%; /* 波浪也要非常高 */
-  left: -50%; /* 起始位置向左偏移 */
-  bottom: -185%; /* 將圓形的絕大部分藏在容器下方，只露出頂部邊緣 */
+  display: block !important; /* 強制 span 變成區塊元素 */
+  position: absolute !important; /* 這是動畫的關鍵 */
+  background: rgba(30, 58, 138, 0.7);
+  border-radius: 1000%;
+  width: 200% !important;
+  height: 200% !important;
+  left: -50% !important;
+  bottom: -185% !important;
   animation-name: wave-animation;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
@@ -29,19 +31,19 @@
 /* 為不同層次的波浪設定不同的顏色、位置和動畫速度 */
 .wave.wave1 {
   background: rgba(30, 58, 138, 0.7);
-  animation-duration: 10s;
+  animation-duration: 10s !important;
 }
 
 .wave.wave2 {
   background: rgba(59, 130, 246, 0.5);
-  bottom: -182%; /* 位置稍微高一點 */
-  animation-duration: 13s;
+  bottom: -182% !important;
+  animation-duration: 13s !important;
 }
 
 .wave.wave3 {
   background: rgba(96, 165, 250, 0.3);
-  bottom: -180%; /* 位置再高一點 */
-  animation-duration: 16s;
+  bottom: -180% !important;
+  animation-duration: 16s !important;
 }
 
 /* 定義海浪移動的動畫 */
