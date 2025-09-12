@@ -33,7 +33,7 @@
   bottom: -360% !important; /* 【已優化】配合新尺寸調整 */
   animation-name: wave-animation-1 !important;
   animation-duration: 15s !important;
-  z-index: 2 !important; /* 【已新增】確保層次正確 */
+  z-index: 2 !important;
 }
 
 .wave.wave2 {
@@ -41,7 +41,7 @@
   bottom: -357% !important; /* 【已優化】配合新尺寸調整 */
   animation-name: wave-animation-2 !important;
   animation-duration: 20s !important;
-  z-index: 3 !important; /* 【已新增】確保層次正確 */
+  z-index: 3 !important;
 }
 
 .wave.wave3 {
@@ -49,17 +49,17 @@
   bottom: -355% !important; /* 【已優化】配合新尺寸調整 */
   animation-name: wave-animation-3 !important;
   animation-duration: 18s !important;
-  z-index: 4 !important; /* 【已新增】確保層次正確 */
+  z-index: 4 !important;
 }
 
 /* 漂浮物體 - 芒果艦長 (在後面) */
 .floating-object {
   display: block !important;
   position: absolute !important;
-  width: 80px !important; /* 物件寬度 */
-  height: 80px !important; /* 物件高度 */
-  bottom: 40px !important; /* 初始垂直位置，更深入海浪 */
-  left: -80px !important; /* 從左側螢幕外開始 */
+  width: 80px !important;
+  height: 80px !important;
+  bottom: 40px !important;
+  left: -80px !important;
   background-image: url('https://taiwan.wordcamp.org/2025/files/2025/09/芒果艦長.png');
   background-size: contain !important;
   background-repeat: no-repeat !important;
@@ -74,10 +74,10 @@
 .sinking-object {
   display: block !important;
   position: absolute !important;
-  width: 100px !important; /* 可自行調整大小 */
+  width: 100px !important;
   height: 100px !important;
   bottom: 30px !important;
-  left: -100px !important; /* 從左側螢幕外開始 */
+  left: -100px !important;
   background-image: url('https://taiwan.wordcamp.org/2025/files/2025/09/水手_黑色邊框_v1.png');
   background-size: contain !important;
   background-repeat: no-repeat !important;
@@ -86,32 +86,31 @@
   animation-duration: 25s !important;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-delay: -1.25s !important; /* 利用負延遲創造 5% 的領先間距 */
+  animation-delay: -1.25s !important;
 }
 
 /* 【已更新】靜態冰山群 */
 .iceberg {
   display: block !important;
   position: absolute !important;
-  width: 200px !important; /* 變高變大 */
+  width: 200px !important;
   height: 160px !important;
   bottom: 0 !important;
   right: 15px !important;
-  background: #e0e0e0 !important; /* 淺灰色背景 */
-  z-index: 1 !important; /* 在波浪後面 */
+  background: #e0e0e0 !important;
+  z-index: 1 !important;
   clip-path: polygon(30% 0%, 40% 20%, 60% 10%, 75% 30%, 80% 25%, 100% 100%, 0% 100%);
-  /* 堆疊陰影製造粗黑邊框 */
   filter: drop-shadow(2px 0px 0 #000) drop-shadow(-2px 0px 0 #000) drop-shadow(0px -2px 0 #000) drop-shadow(2px -2px 0 #000) drop-shadow(-2px -2px 0 #000);
 }
 
 .iceberg-2 {
   display: block !important;
   position: absolute !important;
-  width: 160px !important; /* 變高變大 */
+  width: 160px !important;
   height: 120px !important;
   bottom: 0 !important;
-  right: 160px !important; /* 在主冰山左邊 */
-  background: #d0d0d0 !important; /* 顏色稍暗 */
+  right: 160px !important;
+  background: #d0d0d0 !important;
   z-index: 1 !important;
   clip-path: polygon(20% 15%, 45% 0%, 60% 20%, 80% 10%, 100% 100%, 0% 100%);
   filter: drop-shadow(2px 0px 0 #000) drop-shadow(-2px 0px 0 #000) drop-shadow(0px -2px 0 #000);
@@ -120,16 +119,15 @@
 .iceberg-3 {
   display: block !important;
   position: absolute !important;
-  width: 100px !important; /* 變高變大 */
+  width: 100px !important;
   height: 80px !important;
   bottom: 0 !important;
-  right: 0px !important; /* 在主冰山右邊 */
-  background: #c0c0c0 !important; /* 顏色更暗 */
+  right: 0px !important;
+  background: #c0c0c0 !important;
   z-index: 1 !important;
   clip-path: polygon(25% 0%, 50% 10%, 75% 0%, 100% 100%, 0% 100%);
   filter: drop-shadow(1.5px 0px 0 #000) drop-shadow(-1.5px 0px 0 #000) drop-shadow(0px -1.5px 0 #000);
 }
-
 
 /* 躍出海面的飛魚 */
 .flying-fish {
@@ -137,22 +135,21 @@
   position: absolute !important;
   width: 70px !important;
   height: 70px !important;
-  left: -70px !important; /* 從畫面外開始 */
+  left: -70px !important;
   bottom: 30px !important;
   background-image: url('https://taiwan.wordcamp.org/2025/files/2025/08/image-3.png');
   background-size: contain !important;
   background-repeat: no-repeat !important;
-  z-index: 8 !important; /* 【已更新】在船隻後面，在波浪之上 */
-  opacity: 0; /* 【已新增】預設隱藏，由動畫控制 */
-  animation-name: fish-animation !important; /* 【已更新】使用新的流暢動畫 */
+  z-index: 8 !important; /* 在船隻後面，在波浪之上 */
+  opacity: 0;
+  animation-name: fish-animation !important;
   animation-duration: 18s !important;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-delay: 3s !important;
 }
 
-
-/* 【已優化】海浪動畫改為真正無縫的循環 */
+/* 海浪動畫 */
 @keyframes wave-animation-1 {
   0% { transform: translateX(0) translateY(0); }
   50% { transform: translateX(-12.5%) translateY(15px); }
@@ -197,36 +194,34 @@
   60%  { transform: translateX(66vw) translateY(8px) rotate(-2deg); opacity: 1; }
   70%  { transform: translateX(77vw) translateY(-12px) rotate(1deg); opacity: 1; }
   80%  { transform: translateX(88vw) translateY(5px) rotate(0deg); opacity: 1; }
-  /* 從這裡開始沉沒 */
   85%  { transform: translateX(93.5vw) translateY(-5px) rotate(-2deg); opacity: 1; }
   90%  { transform: translateX(99vw) translateY(40px) rotate(15deg); opacity: 1; }
   100% { transform: translateX(104.5vw) translateY(150px) rotate(45deg); opacity: 0; }
 }
 
-/* 【已更新】全新的流暢飛魚動畫，修正角度並呈現半圓弧跳躍 */
+/* 【已更新】飛魚動畫，修正角度並呈現 33% 循環 */
 @keyframes fish-animation {
   /* -- 第一個跳躍 -- */
-  0% { transform: translateX(0vw) translateY(40px) rotate(-15deg); opacity: 0; }
-  2% { transform: translateX(3vw) translateY(10px) rotate(-15deg); opacity: 1; }
-  16.5% { transform: translateX(20vw) translateY(-70px) rotate(-45deg); } /* 最高點，身體水平 */
-  31% { transform: translateX(37vw) translateY(10px) rotate(-75deg); opacity: 1; }
-  33% { transform: translateX(40vw) translateY(40px) rotate(-75deg); opacity: 0; }
+  0% { transform: translateX(0vw) translateY(40px) rotate(30deg); opacity: 0; }
+  2% { transform: translateX(3vw) translateY(10px) rotate(30deg); opacity: 1; }
+  16.5% { transform: translateX(20vw) translateY(-70px) rotate(0deg); } /* 最高點，視覺水平 */
+  31% { transform: translateX(37vw) translateY(10px) rotate(-30deg); opacity: 1; }
+  33% { transform: translateX(40vw) translateY(40px) rotate(-30deg); opacity: 0; }
   /* -- 第二個跳躍 -- */
-  33.1% { transform: translateX(40vw) translateY(40px) rotate(-15deg); opacity: 0; }
-  35.1% { transform: translateX(43vw) translateY(10px) rotate(-15deg); opacity: 1; }
-  49.5% { transform: translateX(60vw) translateY(-70px) rotate(-45deg); }
-  64.1% { transform: translateX(77vw) translateY(10px) rotate(-75deg); opacity: 1; }
-  66% { transform: translateX(80vw) translateY(40px) rotate(-75deg); opacity: 0; }
+  33.1% { transform: translateX(40vw) translateY(40px) rotate(30deg); opacity: 0; }
+  35.1% { transform: translateX(43vw) translateY(10px) rotate(30deg); opacity: 1; }
+  49.5% { transform: translateX(60vw) translateY(-70px) rotate(0deg); }
+  64.1% { transform: translateX(77vw) translateY(10px) rotate(-30deg); opacity: 1; }
+  66% { transform: translateX(80vw) translateY(40px) rotate(-30deg); opacity: 0; }
   /* -- 第三個跳躍 -- */
-  66.1% { transform: translateX(80vw) translateY(40px) rotate(-15deg); opacity: 0; }
-  68.1% { transform: translateX(83vw) translateY(10px) rotate(-15deg); opacity: 1; }
-  82.5% { transform: translateX(100vw) translateY(-70px) rotate(-45deg); }
-  97.1% { transform: translateX(117vw) translateY(10px) rotate(-75deg); opacity: 1; }
-  100% { transform: translateX(120vw) translateY(40px) rotate(-75deg); opacity: 0; }
+  66.1% { transform: translateX(80vw) translateY(40px) rotate(30deg); opacity: 0; }
+  68.1% { transform: translateX(83vw) translateY(10px) rotate(30deg); opacity: 1; }
+  82.5% { transform: translateX(100vw) translateY(-70px) rotate(0deg); }
+  97.1% { transform: translateX(117vw) translateY(10px) rotate(-30deg); opacity: 1; }
+  100% { transform: translateX(120vw) translateY(40px) rotate(-30deg); opacity: 0; }
 }
 
-
-/* RWD 響應式設計：針對手機等小螢幕裝置調整 */
+/* RWD 響應式設計 */
 @media (max-width: 768px) {
   .ocean-container {
     height: 150px !important;
@@ -235,28 +230,24 @@
       width: 60px !important;
       height: 60px !important;
   }
-  
-  /* 【新增】專為手機設計的漂浮動畫，減小垂直幅度 */
   .floating-object {
     animation-name: float-animation-mobile !important;
   }
   .sinking-object {
     animation-name: sinking-animation-mobile !important;
   }
-  
-  /* 手機版冰山與飛魚調整 */
   .iceberg {
-      width: 120px !important; /* 變高變大 */
+      width: 120px !important;
       height: 100px !important;
       right: 10px !important;
   }
   .iceberg-2 {
-      width: 90px !important; /* 變高變大 */
+      width: 90px !important;
       height: 70px !important;
       right: 100px !important;
   }
   .iceberg-3 {
-      width: 60px !important; /* 變高變大 */
+      width: 60px !important;
       height: 50px !important;
       right: 5px !important;
   }
@@ -292,7 +283,6 @@
     60%  { transform: translateX(66vw) translateY(5px) rotate(-2deg); opacity: 1; }
     70%  { transform: translateX(77vw) translateY(-7px) rotate(1deg); opacity: 1; }
     80%  { transform: translateX(88vw) translateY(3px) rotate(0deg); opacity: 1; }
-    /* 從這裡開始沉沒 */
     85%  { transform: translateX(93.5vw) translateY(-3px) rotate(-2deg); opacity: 1; }
     90%  { transform: translateX(99vw) translateY(25px) rotate(15deg); opacity: 1; }
     100% { transform: translateX(104.5vw) translateY(90px) rotate(45deg); opacity: 0; }
@@ -301,23 +291,23 @@
   /* 【已更新】手機版飛魚動畫，修正角度 */
   @keyframes fish-animation-mobile {
     /* -- 第一個跳躍 -- */
-    0% { transform: translateX(0vw) translateY(25px) rotate(-15deg); opacity: 0; }
-    2% { transform: translateX(3vw) translateY(5px) rotate(-15deg); opacity: 1; }
-    16.5% { transform: translateX(20vw) translateY(-45px) rotate(-45deg); }
-    31% { transform: translateX(37vw) translateY(5px) rotate(-75deg); opacity: 1; }
-    33% { transform: translateX(40vw) translateY(25px) rotate(-75deg); opacity: 0; }
+    0% { transform: translateX(0vw) translateY(25px) rotate(30deg); opacity: 0; }
+    2% { transform: translateX(3vw) translateY(5px) rotate(30deg); opacity: 1; }
+    16.5% { transform: translateX(20vw) translateY(-45px) rotate(0deg); }
+    31% { transform: translateX(37vw) translateY(5px) rotate(-30deg); opacity: 1; }
+    33% { transform: translateX(40vw) translateY(25px) rotate(-30deg); opacity: 0; }
     /* -- 第二個跳躍 -- */
-    33.1% { transform: translateX(40vw) translateY(25px) rotate(-15deg); opacity: 0; }
-    35.1% { transform: translateX(43vw) translateY(5px) rotate(-15deg); opacity: 1; }
-    49.5% { transform: translateX(60vw) translateY(-45px) rotate(-45deg); }
-    64.1% { transform: translateX(77vw) translateY(5px) rotate(-75deg); opacity: 1; }
-    66% { transform: translateX(80vw) translateY(25px) rotate(-75deg); opacity: 0; }
+    33.1% { transform: translateX(40vw) translateY(25px) rotate(30deg); opacity: 0; }
+    35.1% { transform: translateX(43vw) translateY(5px) rotate(30deg); opacity: 1; }
+    49.5% { transform: translateX(60vw) translateY(-45px) rotate(0deg); }
+    64.1% { transform: translateX(77vw) translateY(5px) rotate(-30deg); opacity: 1; }
+    66% { transform: translateX(80vw) translateY(25px) rotate(-30deg); opacity: 0; }
     /* -- 第三個跳躍 -- */
-    66.1% { transform: translateX(80vw) translateY(25px) rotate(-15deg); opacity: 0; }
-    68.1% { transform: translateX(83vw) translateY(10px) rotate(-15deg); opacity: 1; }
-    82.5% { transform: translateX(100vw) translateY(-45px) rotate(-45deg); }
-    97.1% { transform: translateX(117vw) translateY(5px) rotate(-75deg); opacity: 1; }
-    100% { transform: translateX(120vw) translateY(25px) rotate(-75deg); opacity: 0; }
+    66.1% { transform: translateX(80vw) translateY(25px) rotate(30deg); opacity: 0; }
+    68.1% { transform: translateX(83vw) translateY(10px) rotate(30deg); opacity: 1; }
+    82.5% { transform: translateX(100vw) translateY(-45px) rotate(0deg); }
+    97.1% { transform: translateX(117vw) translateY(5px) rotate(-30deg); opacity: 1; }
+    100% { transform: translateX(120vw) translateY(25px) rotate(-30deg); opacity: 0; }
   }
 }
 
