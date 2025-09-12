@@ -46,16 +46,13 @@
   animation-duration: 16s !important;
 }
 
-/* 定義海浪移動的動畫 */
+/* 【已更新】定義海浪向前移動的動畫 */
 @keyframes wave-animation {
   0% {
-    transform: translateX(0) translateZ(0) scaleY(1);
-  }
-  50% {
-    transform: translateX(-25px) translateZ(0) scaleY(0.55);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(0) translateZ(0) scaleY(1);
+    transform: translateX(-50%);
   }
 }
 
