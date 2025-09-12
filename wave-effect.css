@@ -112,12 +112,12 @@
   100% { transform: translateX(-33.33%) translateY(0); }
 }
 
-/* 【新增】漂浮物體的動畫 */
+/* 【已更新】讓漂浮物體跟著前後移動 */
 @keyframes float-animation {
   0% { transform: translateX(-50%) translateY(0) rotate(0deg); }
-  25% { transform: translateX(-55%) translateY(-15px) rotate(-3deg); }
+  25% { transform: translateX(calc(-50% - 30px)) translateY(-15px) rotate(-5deg); }
   50% { transform: translateX(-50%) translateY(0) rotate(0deg); }
-  75% { transform: translateX(-45%) translateY(-10px) rotate(3deg); }
+  75% { transform: translateX(calc(-50% + 30px)) translateY(-10px) rotate(5deg); }
   100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
 }
 
@@ -128,5 +128,4 @@
     height: 150px !important;
   }
 }
-
 
