@@ -142,7 +142,7 @@
   background-image: url('https://taiwan.wordcamp.org/2025/files/2025/08/image-3.png');
   background-size: contain !important;
   background-repeat: no-repeat !important;
-  z-index: 5 !important; /* 在部分波浪之上 */
+  z-index: 8 !important; /* 【已更新】在船隻後面，在波浪之上 */
   opacity: 0; /* 【已新增】預設隱藏，由動畫控制 */
   animation-name: fish-animation !important; /* 【已更新】使用新的流暢動畫 */
   animation-duration: 18s !important;
@@ -203,7 +203,7 @@
   100% { transform: translateX(104.5vw) translateY(150px) rotate(45deg); opacity: 0; }
 }
 
-/* 【已更新】全新的流暢飛魚動畫，呈現半圓弧跳躍並同步角度 */
+/* 【已更新】全新的流暢飛魚動畫，修正角度並呈現半圓弧跳躍 */
 @keyframes fish-animation {
   /* -- 第一個跳躍 -- */
   0% { transform: translateX(0vw) translateY(40px) rotate(-15deg); opacity: 0; }
@@ -298,7 +298,7 @@
     100% { transform: translateX(104.5vw) translateY(90px) rotate(45deg); opacity: 0; }
   }
 
-  /* 【已更新】手機版飛魚動畫 */
+  /* 【已更新】手機版飛魚動畫，修正角度 */
   @keyframes fish-animation-mobile {
     /* -- 第一個跳躍 -- */
     0% { transform: translateX(0vw) translateY(25px) rotate(-15deg); opacity: 0; }
@@ -314,7 +314,7 @@
     66% { transform: translateX(80vw) translateY(25px) rotate(-75deg); opacity: 0; }
     /* -- 第三個跳躍 -- */
     66.1% { transform: translateX(80vw) translateY(25px) rotate(-15deg); opacity: 0; }
-    68.1% { transform: translateX(83vw) translateY(5px) rotate(-15deg); opacity: 1; }
+    68.1% { transform: translateX(83vw) translateY(10px) rotate(-15deg); opacity: 1; }
     82.5% { transform: translateX(100vw) translateY(-45px) rotate(-45deg); }
     97.1% { transform: translateX(117vw) translateY(5px) rotate(-75deg); opacity: 1; }
     100% { transform: translateX(120vw) translateY(25px) rotate(-75deg); opacity: 0; }
