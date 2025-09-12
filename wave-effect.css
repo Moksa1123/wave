@@ -36,10 +36,10 @@
 }
 
 .wave.wave2 {
-  background: rgba(59, 130, 246, 0.5); /* 中藍 */
+  background: rgba(59, 130, 246, 0.5); /* 中藍 - 主海浪 */
   bottom: -257% !important; /* 已大幅調高 */
   animation-name: wave-animation-2 !important;
-  animation-duration: 12s !important;
+  animation-duration: 20s !important; /* 【已更新】與漂浮物同步 */
 }
 
 .wave.wave3 {
@@ -83,18 +83,19 @@
   100% { transform: translateX(-33.33%) translateY(0); }
 }
 
+/* 【已更新】主海浪的動畫，垂直起伏與漂浮物完全同步 */
 @keyframes wave-animation-2 {
-  0% { transform: translateX(0) translateY(12px); }
-  10% { transform: translateX(-3.33%) translateY(10px); }
-  20% { transform: translateX(-6.66%) translateY(4px); }
-  30% { transform: translateX(-9.99%) translateY(-4px); }
-  40% { transform: translateX(-13.32%) translateY(-10px); }
+  0% { transform: translateX(0) translateY(5px); }
+  10% { transform: translateX(-3.33%) translateY(-10px); }
+  20% { transform: translateX(-6.66%) translateY(8px); }
+  30% { transform: translateX(-9.99%) translateY(-15px); }
+  40% { transform: translateX(-13.32%) translateY(2px); }
   50% { transform: translateX(-16.65%) translateY(-12px); }
-  60% { transform: translateX(-19.98%) translateY(-10px); }
-  70% { transform: translateX(-23.31%) translateY(-4px); }
-  80% { transform: translateX(-26.64%) translateY(4px); }
-  90% { transform: translateX(-29.97%) translateY(10px); }
-  100% { transform: translateX(-33.33%) translateY(12px); }
+  60% { transform: translateX(-19.98%) translateY(10px); }
+  70% { transform: translateX(-23.31%) translateY(-8px); }
+  80% { transform: translateX(-26.64%) translateY(15px); }
+  90% { transform: translateX(-29.97%) translateY(-5px); }
+  100% { transform: translateX(-33.33%) translateY(5px); }
 }
 
 @keyframes wave-animation-3 {
