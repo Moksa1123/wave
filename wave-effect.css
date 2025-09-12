@@ -49,14 +49,6 @@
   animation-duration: 18s !important;
 }
 
-/* 第 4 層浪花 - 已更新為白色 */
-.wave.wave4 {
-  background: rgba(255, 255, 255, 0.5); /* 白色浪花 */
-  bottom: -253% !important; /* 已大幅調高 */
-  animation-name: wave-animation-4 !important;
-  animation-duration: 8s !important;
-}
-
 /* 【已優化】基於平滑曲線重寫所有動畫，徹底消除頓挫感 */
 @keyframes wave-animation-1 {
   0% { transform: translateX(0) translateY(0); }
@@ -99,21 +91,6 @@
   90% { transform: translateX(-29.97%) translateY(-11px); }
   100% { transform: translateX(-33.33%) translateY(0); }
 }
-
-@keyframes wave-animation-4 {
-  0% { transform: translateX(0) translateY(8px); }
-  10% { transform: translateX(-3.33%) translateY(7px); }
-  20% { transform: translateX(-6.66%) translateY(3px); }
-  30% { transform: translateX(-9.99%) translateY(-3px); }
-  40% { transform: translateX(-13.32%) translateY(-7px); }
-  50% { transform: translateX(-16.65%) translateY(-8px); }
-  60% { transform: translateX(-19.98%) translateY(-7px); }
-  70% { transform: translateX(-23.31%) translateY(-3px); }
-  80% { transform: translateX(-26.64%) translateY(3px); }
-  90% { transform: translateX(-29.97%) translateY(7px); }
-  100% { transform: translateX(-33.33%) translateY(8px); }
-}
-
 
 /* RWD 響應式設計：針對手機等小螢幕裝置調整高度 */
 @media (max-width: 768px) {
