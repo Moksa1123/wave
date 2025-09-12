@@ -49,41 +49,60 @@
   animation-duration: 18s !important;
 }
 
-/* 【新增】漂浮物體的樣式 */
+/* 漂浮物體 - 芒果艦長 (在後面) */
 .floating-object {
   display: block !important;
   position: absolute !important;
   width: 80px !important; /* 物件寬度 */
   height: 80px !important; /* 物件高度 */
   bottom: 40px !important; /* 初始垂直位置，更深入海浪 */
-  left: -80px !important; /* 【已更新】從左側螢幕外開始 */
-  background-image: url('https://taiwan.wordcamp.org/2025/files/2025/09/芒果艦長.png'); /* 【已更新為您的圖片網址】 */
+  left: -80px !important; /* 從左側螢幕外開始 */
+  background-image: url('https://taiwan.wordcamp.org/2025/files/2025/09/芒果艦長.png');
   background-size: contain !important;
   background-repeat: no-repeat !important;
-  z-index: 10 !important; /* 確保在波浪之上 */
+  z-index: 9 !important; /* 【已更新】在後面 */
   animation-name: float-animation !important;
-  animation-duration: 20s !important; /* 【已更新】加長動畫時間以配合長距離移動 */
+  animation-duration: 20s !important;
   animation-iteration-count: infinite;
-  animation-timing-function: linear; /* 【已更新】確保速度一致 */
+  animation-timing-function: linear;
+}
+
+/* 沉沒物體 - 水手 (在前面) */
+.sinking-object {
+  display: block !important;
+  position: absolute !important;
+  width: 100px !important; /* 可自行調整大小 */
+  height: 100px !important;
+  bottom: 30px !important;
+  left: -100px !important; /* 從左側螢幕外開始 */
+  background-image: url('https://taiwan.wordcamp.org/2025/files/2025/09/水手_黑色邊框_v1.png'); /* 【已更新為您的新圖片】 */
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  z-index: 10 !important; /* 【已更新】在前面 */
+  animation-name: sinking-animation !important;
+  animation-duration: 25s !important; /* 動畫時間比艦長慢 */
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 2s; /* 【已更新】微調延遲時間 */
 }
 
 
-/* 【已優化】基於平滑曲線重寫所有動畫，徹底消除頓挫感 */
+/* 【已優化】背景海浪動畫，使其更平滑、無頓挫感 */
 @keyframes wave-animation-1 {
-  0% { transform: translateX(0) translateY(0); }
-  10% { transform: translateX(-3.33%) translateY(9px); }
-  20% { transform: translateX(-6.66%) translateY(14px); }
-  30% { transform: translateX(-9.99%) translateY(14px); }
-  40% { transform: translateX(-13.32%) translateY(9px); }
-  50% { transform: translateX(-16.65%) translateY(0); }
-  60% { transform: translateX(-19.98%) translateY(-9px); }
-  70% { transform: translateX(-23.31%) translateY(-14px); }
-  80% { transform: translateX(-26.64%) translateY(-14px); }
-  90% { transform: translateX(-29.97%) translateY(-9px); }
-  100% { transform: translateX(-33.33%) translateY(0); }
+  0% { transform: translateX(0) translateY(10px); }
+  10% { transform: translateX(-3.33%) translateY(5px); }
+  20% { transform: translateX(-6.66%) translateY(-2px); }
+  30% { transform: translateX(-9.99%) translateY(-8px); }
+  40% { transform: translateX(-13.32%) translateY(-12px); }
+  50% { transform: translateX(-16.65%) translateY(-10px); }
+  60% { transform: translateX(-19.98%) translateY(-5px); }
+  70% { transform: translateX(-23.31%) translateY(0px); }
+  80% { transform: translateX(-26.64%) translateY(4px); }
+  90% { transform: translateX(-29.97%) translateY(8px); }
+  100% { transform: translateX(-33.33%) translateY(10px); }
 }
 
-/* 【已更新】主海浪的動畫，垂直起伏與漂浮物完全同步 */
+/* 主海浪的動畫，垂直起伏與漂浮物完全同步 */
 @keyframes wave-animation-2 {
   0% { transform: translateX(0) translateY(5px); }
   10% { transform: translateX(-3.33%) translateY(-10px); }
@@ -98,21 +117,22 @@
   100% { transform: translateX(-33.33%) translateY(5px); }
 }
 
+/* 【已優化】背景海浪動畫，使其更平滑、無頓挫感 */
 @keyframes wave-animation-3 {
-  0% { transform: translateX(0) translateY(0); }
-  10% { transform: translateX(-3.33%) translateY(11px); }
-  20% { transform: translateX(-6.66%) translateY(17px); }
-  30% { transform: translateX(-9.99%) translateY(17px); }
-  40% { transform: translateX(-13.32%) translateY(11px); }
-  50% { transform: translateX(-16.65%) translateY(0); }
-  60% { transform: translateX(-19.98%) translateY(-11px); }
-  70% { transform: translateX(-23.31%) translateY(-17px); }
-  80% { transform: translateX(-26.64%) translateY(-17px); }
-  90% { transform: translateX(-29.97%) translateY(-11px); }
-  100% { transform: translateX(-33.33%) translateY(0); }
+  0% { transform: translateX(0) translateY(-5px); }
+  10% { transform: translateX(-3.33%) translateY(0px); }
+  20% { transform: translateX(-6.66%) translateY(8px); }
+  30% { transform: translateX(-9.99%) translateY(12px); }
+  40% { transform: translateX(-13.32%) translateY(8px); }
+  50% { transform: translateX(-16.65%) translateY(0px); }
+  60% { transform: translateX(-19.98%) translateY(-5px); }
+  70% { transform: translateX(-23.31%) translateY(-10px); }
+  80% { transform: translateX(-26.64%) translateY(-8px); }
+  90% { transform: translateX(-29.97%) translateY(2px); }
+  100% { transform: translateX(-33.33%) translateY(-5px); }
 }
 
-/* 【已更新】讓漂浮物體從左至右橫跨整個畫面 */
+/* 芒果艦長從左至右橫跨整個畫面 */
 @keyframes float-animation {
   0% { transform: translateX(0) translateY(5px) rotate(2deg); }
   10% { transform: translateX(10vw) translateY(-10px) rotate(-5deg); }
@@ -127,11 +147,31 @@
   100% { transform: translateX(calc(100vw + 80px)) translateY(5px) rotate(2deg); }
 }
 
+/* 鐵達尼號沉沒動畫 */
+@keyframes sinking-animation {
+  0% { transform: translateX(0) translateY(10px) rotate(-2deg); opacity: 1; }
+  10% { transform: translateX(10vw) translateY(-5px) rotate(3deg); }
+  20% { transform: translateX(20vw) translateY(12px) rotate(-4deg); }
+  30% { transform: translateX(30vw) translateY(-8px) rotate(5deg); }
+  40% { transform: translateX(40vw) translateY(15px) rotate(-6deg); }
+  50% { transform: translateX(50vw) translateY(-10px) rotate(4deg); }
+  60% { transform: translateX(60vw) translateY(8px) rotate(-2deg); }
+  70% { transform: translateX(70vw) translateY(-12px) rotate(1deg); }
+  80% { transform: translateX(80vw) translateY(5px) rotate(0deg); }
+  90% { transform: translateX(90vw) translateY(-5px) rotate(-2deg); }
+  95% { transform: translateX(95vw) translateY(40px) rotate(15deg); }
+  100% { transform: translateX(100vw) translateY(150px) rotate(45deg); opacity: 0; }
+}
+
 
 /* RWD 響應式設計：針對手機等小螢幕裝置調整高度 */
 @media (max-width: 768px) {
   .ocean-container {
     height: 150px !important;
+  }
+  .floating-object, .sinking-object {
+      width: 60px !important;
+      height: 60px !important;
   }
 }
 
