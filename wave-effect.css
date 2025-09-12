@@ -1,66 +1,58 @@
-/* --- 海浪效果 CSS (Remote CSS) --- */
+/*
+ * 全新純 CSS 海浪效果
+ * 這個版本不需要 SVG，可以避免在編輯器中儲存失敗的問題。
+ */
 
-/* 主要容器：您需要將這個 .ocean-container 類別加到您的區塊上 */
+/* 主要容器，用來建立海浪的視窗 */
 .ocean-container {
-    width: 100%;
-    height: 300px; /* 您可以自行調整總高度 */
-    position: relative;
-    background-color: white; /* 上半部固定為白色背景 */
-    overflow: hidden; /* 這是必要的，用來隱藏超出範圍的動畫 */
+  position: relative; /* 讓內部元素可以對齊 */
+  width: 100%;
+  height: 200px; /* 您可以調整海浪的高度 */
+  background: #f0f8ff; /* 海浪上方的背景色 */
+  overflow: hidden; /* 隱藏超出範圍的波浪，這是最重要的部分 */
 }
 
-/* 波浪 SVG 的容器 */
-.waves {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 120px; /* 波浪區域的高度 */
-    min-height: 100px;
-    max-height: 150px;
+/* 這是構成每一層波浪的基礎樣式 */
+.wave {
+  background: rgba(30, 58, 138, 0.7); /* 波浪的基礎顏色 */
+  border-radius: 1000%; /* 關鍵：用超大圓角做出圓弧 */
+  position: absolute;
+  width: 200%; /* 波浪要非常寬，才能左右移動 */
+  height: 200%; /* 波浪也要非常高 */
+  left: -50%; /* 起始位置向左偏移 */
+  bottom: -185%; /* 將圓形的絕大部分藏在容器下方，只露出頂部邊緣 */
+  animation-name: wave-animation;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-/* 動畫的群組 */
-.parallax > use {
-    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+/* 為不同層次的波浪設定不同的顏色、位置和動畫速度 */
+.wave.wave1 {
+  background: rgba(30, 58, 138, 0.7);
+  animation-duration: 10s;
 }
 
-/* 各層波浪的獨立動畫設定 */
-.parallax > use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
+.wave.wave2 {
+  background: rgba(59, 130, 246, 0.5);
+  bottom: -182%; /* 位置稍微高一點 */
+  animation-duration: 13s;
 }
 
-.parallax > use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
+.wave.wave3 {
+  background: rgba(96, 165, 250, 0.3);
+  bottom: -180%; /* 位置再高一點 */
+  animation-duration: 16s;
 }
 
-.parallax > use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
+/* 定義海浪移動的動畫 */
+@keyframes wave-animation {
+  0% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-25px) translateZ(0) scaleY(0.55);
+  }
+  100% {
+    transform: translateX(0) translateZ(0) scaleY(1);
+  }
 }
-
-.parallax > use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
-}
-
-/* 定義水平移動的動畫 */
-@keyframes move-forever {
-    0% {
-        transform: translate3d(-90px,0,0);
-    }
-    100% { 
-        transform: translate3d(85px,0,0);
-    }
-}
-
-/* 手機版響應式調整 */
-@media (max-width: 768px) {
-    .waves {
-        height: 40px;
-        min-height: 40px;
-    }
-}
-
