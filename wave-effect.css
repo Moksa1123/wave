@@ -8,7 +8,7 @@
   position: relative !important;
   width: 100% !important;
   height: 400px !important; /* 增加高度以形成海嘯感 */
-  background: #001f3f; /* 加深背景顏色以突顯浪花 */
+  background: #ffffff; /* 【已更新】將背景改為白色 */
   overflow: hidden !important; /* 確保波浪被裁切 */
   z-index: 0; /* 確保它不會蓋到其他內容 */
 }
@@ -49,7 +49,7 @@
 
 /* 新增：第四層，用來模擬浪花 */
 .wave.wave4 {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.1); /* 【已更新】將浪花改為淺灰色以在白色背景上顯示 */
   bottom: -173% !important; /* 【已修正】位於最頂層 */
   animation-name: wave-animation-4 !important;
   animation-duration: 8s !important; /* 速度最快，更具動感 */
