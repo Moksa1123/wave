@@ -56,25 +56,25 @@
   animation-duration: 8s !important;
 }
 
-/* 為每一層波浪定義不同的動畫，使其不再同步 */
+/* 【已修正】為每一層波浪定義平滑的水平移動動畫 */
 @keyframes wave-animation-1 {
-  0% { transform: translateX(0) rotate(0deg); }
-  100% { transform: translateX(-33.33%) rotate(360deg); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
 }
 
 @keyframes wave-animation-2 {
-  0% { transform: translateX(0) rotate(0deg); }
-  100% { transform: translateX(-33.33%) rotate(360deg); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
 }
 
 @keyframes wave-animation-3 {
-  0% { transform: translateX(0) rotate(0deg); }
-  100% { transform: translateX(-33.33%) rotate(360deg); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
 }
 
 @keyframes wave-animation-4 {
-  0% { transform: translateX(0) rotate(0deg); }
-  100% { transform: translateX(-33.33%) rotate(360deg); }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
 }
 
 /* RWD 響應式設計：針對手機等小螢幕裝置調整高度 */
