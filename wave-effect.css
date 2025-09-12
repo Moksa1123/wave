@@ -55,17 +55,16 @@
   position: absolute !important;
   width: 80px !important; /* 物件寬度 */
   height: 80px !important; /* 物件高度 */
-  bottom: 40px !important; /* 【已再次調低】初始垂直位置，更深入海浪 */
-  left: 50% !important; /* 初始水平位置 (置中) */
-  transform: translateX(-50%); /* 精準置中 */
+  bottom: 40px !important; /* 初始垂直位置，更深入海浪 */
+  left: -80px !important; /* 【已更新】從左側螢幕外開始 */
   background-image: url('https://taiwan.wordcamp.org/2025/files/2025/09/芒果艦長.png'); /* 【已更新為您的圖片網址】 */
   background-size: contain !important;
   background-repeat: no-repeat !important;
   z-index: 10 !important; /* 確保在波浪之上 */
   animation-name: float-animation !important;
-  animation-duration: 8s !important; /* 稍微調整時間以配合複雜度 */
+  animation-duration: 20s !important; /* 【已更新】加長動畫時間以配合長距離移動 */
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear; /* 【已更新】確保速度一致 */
 }
 
 
@@ -112,19 +111,19 @@
   100% { transform: translateX(-33.33%) translateY(0); }
 }
 
-/* 【已更新】大幅擴展漂浮物體的移動範圍 */
+/* 【已更新】讓漂浮物體從左至右橫跨整個畫面 */
 @keyframes float-animation {
-  0% { transform: translateX(-50%) translateY(0px) rotate(0deg); }
-  10% { transform: translateX(calc(-50% - 40px)) translateY(-8px) rotate(-3deg); }
-  20% { transform: translateX(calc(-50% - 80px)) translateY(-15px) rotate(-6deg); }
-  30% { transform: translateX(calc(-50% - 100px)) translateY(-18px) rotate(-8deg); }
-  40% { transform: translateX(calc(-50% - 50px)) translateY(-12px) rotate(-4deg); }
-  50% { transform: translateX(-50%) translateY(5px) rotate(0deg); }
-  60% { transform: translateX(calc(-50% + 50px)) translateY(-12px) rotate(4deg); }
-  70% { transform: translateX(calc(-50% + 100px)) translateY(-18px) rotate(8deg); }
-  80% { transform: translateX(calc(-50% + 80px)) translateY(-15px) rotate(6deg); }
-  90% { transform: translateX(calc(-50% + 40px)) translateY(-8px) rotate(3deg); }
-  100% { transform: translateX(-50%) translateY(0px) rotate(0deg); }
+  0% { transform: translateX(0) translateY(5px) rotate(2deg); }
+  10% { transform: translateX(10vw) translateY(-10px) rotate(-5deg); }
+  20% { transform: translateX(20vw) translateY(8px) rotate(4deg); }
+  30% { transform: translateX(30vw) translateY(-15px) rotate(-8deg); }
+  40% { transform: translateX(40vw) translateY(2px) rotate(3deg); }
+  50% { transform: translateX(50vw) translateY(-12px) rotate(-6deg); }
+  60% { transform: translateX(60vw) translateY(10px) rotate(5deg); }
+  70% { transform: translateX(70vw) translateY(-8px) rotate(-4deg); }
+  80% { transform: translateX(80vw) translateY(15px) rotate(8deg); }
+  90% { transform: translateX(90vw) translateY(-5px) rotate(-2deg); }
+  100% { transform: translateX(calc(100vw + 80px)) translateY(5px) rotate(2deg); }
 }
 
 
