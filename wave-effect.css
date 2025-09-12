@@ -10,7 +10,7 @@
   position: relative !important;
   width: 100% !important;
   height: 250px !important;
-  background: #f5f5f5; /* 白色背景 */
+  background: #f5f5f5; /* 淺灰色背景 */
   overflow: hidden !important;
   z-index: 0;
 }
@@ -48,6 +48,26 @@
   animation-name: wave-animation-3 !important;
   animation-duration: 18s !important;
 }
+
+/* 【新增】漂浮物體的樣式 */
+.floating-object {
+  display: block !important;
+  position: absolute !important;
+  width: 80px !important; /* 物件寬度 */
+  height: 80px !important; /* 物件高度 */
+  bottom: 120px !important; /* 初始垂直位置 */
+  left: 50% !important; /* 初始水平位置 (置中) */
+  transform: translateX(-50%); /* 精準置中 */
+  background-image: url('https://taiwan.wordcamp.org/2025/files/2025/09/芒果艦長.png'); /* 【已更新為您的圖片網址】 */
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  z-index: 10 !important; /* 確保在波浪之上 */
+  animation-name: float-animation !important;
+  animation-duration: 7s !important;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
 
 /* 【已優化】基於平滑曲線重寫所有動畫，徹底消除頓挫感 */
 @keyframes wave-animation-1 {
@@ -91,6 +111,16 @@
   90% { transform: translateX(-29.97%) translateY(-11px); }
   100% { transform: translateX(-33.33%) translateY(0); }
 }
+
+/* 【新增】漂浮物體的動畫 */
+@keyframes float-animation {
+  0% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+  25% { transform: translateX(-55%) translateY(-15px) rotate(-3deg); }
+  50% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+  75% { transform: translateX(-45%) translateY(-10px) rotate(3deg); }
+  100% { transform: translateX(-50%) translateY(0) rotate(0deg); }
+}
+
 
 /* RWD 響應式設計：針對手機等小螢幕裝置調整高度 */
 @media (max-width: 768px) {
