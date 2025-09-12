@@ -89,65 +89,65 @@
   animation-delay: -1.25s !important; /* 利用負延遲創造 5% 的領先間距 */
 }
 
-/* 【新增】靜態冰山群 */
+/* 【已更新】靜態冰山群 */
 .iceberg {
   display: block !important;
   position: absolute !important;
-  width: 150px !important;
-  height: 120px !important;
+  width: 200px !important; /* 變高變大 */
+  height: 160px !important;
   bottom: 0 !important;
-  right: 10px !important;
+  right: 15px !important;
   background: #ffffff !important;
   z-index: 1 !important; /* 在波浪後面 */
   clip-path: polygon(30% 0%, 40% 20%, 60% 10%, 75% 30%, 80% 25%, 100% 100%, 0% 100%);
-  filter: drop-shadow(1.5px 0px 0 #333) drop-shadow(-1.5px 0px 0 #333) drop-shadow(0px -1.5px 0 #333);
+  /* 堆疊陰影製造粗邊框 */
+  filter: drop-shadow(2px 0px 0 #333) drop-shadow(-2px 0px 0 #333) drop-shadow(0px -2px 0 #333) drop-shadow(2px -2px 0 #333) drop-shadow(-2px -2px 0 #333);
 }
 
 .iceberg-2 {
   display: block !important;
   position: absolute !important;
-  width: 120px !important;
-  height: 90px !important;
+  width: 160px !important; /* 變高變大 */
+  height: 120px !important;
   bottom: 0 !important;
-  right: 130px !important; /* 在主冰山左邊 */
+  right: 160px !important; /* 在主冰山左邊 */
   background: #f0f0f0 !important; /* 顏色稍暗 */
   z-index: 1 !important;
   clip-path: polygon(20% 15%, 45% 0%, 60% 20%, 80% 10%, 100% 100%, 0% 100%);
-  filter: drop-shadow(1px 0px 0 #333) drop-shadow(-1px 0px 0 #333) drop-shadow(0px -1px 0 #333);
+  filter: drop-shadow(2px 0px 0 #333) drop-shadow(-2px 0px 0 #333) drop-shadow(0px -2px 0 #333);
 }
 
 .iceberg-3 {
   display: block !important;
   position: absolute !important;
-  width: 80px !important;
-  height: 60px !important;
+  width: 100px !important; /* 變高變大 */
+  height: 80px !important;
   bottom: 0 !important;
   right: 0px !important; /* 在主冰山右邊 */
   background: #e9e9e9 !important; /* 顏色更暗 */
   z-index: 1 !important;
   clip-path: polygon(25% 0%, 50% 10%, 75% 0%, 100% 100%, 0% 100%);
-  filter: drop-shadow(1px 0px 0 #333) drop-shadow(-1px 0px 0 #333) drop-shadow(0px -1px 0 #333);
+  filter: drop-shadow(1.5px 0px 0 #333) drop-shadow(-1.5px 0px 0 #333) drop-shadow(0px -1.5px 0 #333);
 }
 
 
-/* 【新增】躍出海面的飛魚 */
+/* 躍出海面的飛魚 */
 .flying-fish {
   display: block !important;
   position: absolute !important;
   width: 70px !important;
   height: 70px !important;
-  left: 0 !important;
-  bottom: 0 !important; /* 動畫會控制實際位置 */
-  background-image: url('https://taiwan.wordcamp.org/2025/files/2025/08/image-3.png'); /* 【已更新為您的圖片】 */
+  left: -70px !important; /* 從畫面外開始 */
+  bottom: 30px !important;
+  background-image: url('https://taiwan.wordcamp.org/2025/files/2025/08/image-3.png');
   background-size: contain !important;
   background-repeat: no-repeat !important;
   z-index: 5 !important; /* 在部分波浪之上 */
-  opacity: 0; /* 預設隱藏 */
-  animation-name: fish-jump-animation !important;
-  animation-duration: 9s !important;
+  animation-name: fish-animation !important; /* 【已更新】使用新的流暢動畫 */
+  animation-duration: 18s !important; /* 【已更新】加長動畫時間 */
   animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-delay: 2s !important;
+  animation-timing-function: linear; /* 【已更新】確保平滑 */
+  animation-delay: 3s !important;
 }
 
 
@@ -202,17 +202,14 @@
   100% { transform: translateX(104.5vw) translateY(150px) rotate(45deg); opacity: 0; }
 }
 
-/* 【新增】飛魚躍出海面的動畫 */
-@keyframes fish-jump-animation {
-  0% { transform: translateX(20vw) translateY(50px) rotate(-30deg); opacity: 0; }
-  10% { transform: translateX(25vw) translateY(20px) rotate(0deg); opacity: 1; }
-  20% { transform: translateX(35vw) translateY(-40px) rotate(35deg); }
-  30% { transform: translateX(45vw) translateY(-60px) rotate(45deg); }
-  40% { transform: translateX(55vw) translateY(-40px) rotate(35deg); }
-  50% { transform: translateX(65vw) translateY(20px) rotate(0deg); }
-  60% { transform: translateX(70vw) translateY(50px) rotate(-30deg); opacity: 1; }
-  61% { opacity: 0; }
-  100% { opacity: 0; }
+/* 【已更新】全新的流暢飛魚動畫 */
+@keyframes fish-animation {
+  0% { transform: translateX(0vw) translateY(0) rotate(0deg); opacity: 1; }
+  20% { transform: translateX(25vw) translateY(-60px) rotate(20deg); }
+  40% { transform: translateX(50vw) translateY(-80px) rotate(0deg); }
+  60% { transform: translateX(75vw) translateY(-60px) rotate(-20deg); }
+  80% { transform: translateX(100vw) translateY(0) rotate(0deg); }
+  100% { transform: translateX(120vw) translateY(0) rotate(0deg); }
 }
 
 
@@ -234,26 +231,26 @@
     animation-name: sinking-animation-mobile !important;
   }
   
-  /* 【新增】手機版冰山與飛魚調整 */
+  /* 手機版冰山與飛魚調整 */
   .iceberg {
-      width: 100px !important;
-      height: 80px !important;
-      right: 5px !important;
+      width: 120px !important; /* 變高變大 */
+      height: 100px !important;
+      right: 10px !important;
   }
   .iceberg-2 {
-      width: 80px !important;
-      height: 60px !important;
-      right: 85px !important;
+      width: 90px !important; /* 變高變大 */
+      height: 70px !important;
+      right: 100px !important;
   }
   .iceberg-3 {
-      width: 50px !important;
-      height: 40px !important;
-      right: 0px !important;
+      width: 60px !important; /* 變高變大 */
+      height: 50px !important;
+      right: 5px !important;
   }
   .flying-fish {
       width: 50px !important;
       height: 50px !important;
-      animation-name: fish-jump-animation-mobile !important;
+      animation-name: fish-animation-mobile !important;
   }
 
   /* 芒果艦長動畫 (手機版) */
@@ -288,17 +285,14 @@
     100% { transform: translateX(104.5vw) translateY(90px) rotate(45deg); opacity: 0; }
   }
 
-  /* 【新增】手機版飛魚動畫 */
-  @keyframes fish-jump-animation-mobile {
-    0% { transform: translateX(15vw) translateY(30px) rotate(-30deg); opacity: 0; }
-    10% { transform: translateX(20vw) translateY(10px) rotate(0deg); opacity: 1; }
-    20% { transform: translateX(30vw) translateY(-25px) rotate(35deg); }
-    30% { transform: translateX(40vw) translateY(-40px) rotate(45deg); }
-    40% { transform: translateX(50vw) translateY(-25px) rotate(35deg); }
-    50% { transform: translateX(60vw) translateY(10px) rotate(0deg); }
-    60% { transform: translateX(65vw) translateY(30px) rotate(-30deg); opacity: 1; }
-    61% { opacity: 0; }
-    100% { opacity: 0; }
+  /* 【已更新】手機版飛魚動畫 */
+  @keyframes fish-animation-mobile {
+    0% { transform: translateX(0vw) translateY(0) rotate(0deg); opacity: 1; }
+    20% { transform: translateX(25vw) translateY(-40px) rotate(20deg); }
+    40% { transform: translateX(50vw) translateY(-55px) rotate(0deg); }
+    60% { transform: translateX(75vw) translateY(-40px) rotate(-20deg); }
+    80% { transform: translateX(100vw) translateY(0) rotate(0deg); }
+    100% { transform: translateX(120vw) translateY(0) rotate(0deg); }
   }
 }
 
