@@ -1,14 +1,14 @@
 /*
- * 【強化版】純 CSS 海浪效果
- * 這個版本增加了 !important 規則來對抗佈景主題的樣式覆蓋問題。
+ * 【海嘯版】純 CSS 海浪效果
+ * 這個版本增加了浪花效果、海嘯高度，並讓各層波浪的動畫不同步。
  */
 
 /* 主要容器，用來建立海浪的視窗 */
 .ocean-container {
   position: relative !important;
   width: 100% !important;
-  height: 200px !important; /* 確保容器有高度 */
-  background: #f0f8ff;
+  height: 400px !important; /* 增加高度以形成海嘯感 */
+  background: #001f3f; /* 加深背景顏色以突顯浪花 */
   overflow: hidden !important; /* 確保波浪被裁切 */
   z-index: 0; /* 確保它不會蓋到其他內容 */
 }
@@ -17,13 +17,10 @@
 .wave {
   display: block !important; /* 強制 span 變成區塊元素 */
   position: absolute !important; /* 這是動畫的關鍵 */
-  background: rgba(30, 58, 138, 0.7);
   border-radius: 1000%;
   width: 200% !important;
   height: 200% !important;
   left: -50% !important;
-  bottom: -155% !important; /* 已調高海浪位置 */
-  animation-name: wave-animation;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -31,28 +28,54 @@
 /* 為不同層次的波浪設定不同的顏色、位置和動畫速度 */
 .wave.wave1 {
   background: rgba(30, 58, 138, 0.7);
-  animation-duration: 10s !important;
+  bottom: -355% !important; /* 調整高度以配合容器 */
+  animation-name: wave-animation-1 !important;
+  animation-duration: 15s !important;
 }
 
 .wave.wave2 {
   background: rgba(59, 130, 246, 0.5);
-  bottom: -152% !important; /* 已調高海浪位置 */
-  animation-duration: 13s !important;
+  bottom: -352% !important; /* 調整高度以配合容器 */
+  animation-name: wave-animation-2 !important;
+  animation-duration: 12s !important;
 }
 
 .wave.wave3 {
   background: rgba(96, 165, 250, 0.3);
-  bottom: -150% !important; /* 已調高海浪位置 */
-  animation-duration: 16s !important;
+  bottom: -350% !important; /* 調整高度以配合容器 */
+  animation-name: wave-animation-3 !important;
+  animation-duration: 18s !important;
 }
 
-/* 【已更新】定義海浪向前移動的動畫 */
-@keyframes wave-animation {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+/* 新增：第四層，用來模擬浪花 */
+.wave.wave4 {
+  background: rgba(255, 255, 255, 0.9);
+  bottom: -348% !important; /* 位於最頂層 */
+  animation-name: wave-animation-4 !important;
+  animation-duration: 8s !important; /* 速度最快，更具動感 */
+}
+
+
+/* 【已更新】為每一層波浪定義不同的動畫，使其不再同步 */
+@keyframes wave-animation-1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes wave-animation-2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-40%); }
+}
+
+@keyframes wave-animation-3 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-60%); }
+}
+
+/* 浪花的專屬動畫，增加上下起伏感 */
+@keyframes wave-animation-4 {
+  0% { transform: translateX(0) scaleY(1); }
+  50% { transform: translateX(-25%) scaleY(0.8); }
+  100% { transform: translateX(-50%) scaleY(1); }
 }
 
