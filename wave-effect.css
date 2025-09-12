@@ -57,62 +57,63 @@
   animation-duration: 8s !important;
 }
 
-/* 【已更新】為每一層波浪定義每 10% 一步的超精細動畫 */
+/* 【已優化】基於平滑曲線重寫所有動畫，徹底消除頓挫感 */
 @keyframes wave-animation-1 {
   0% { transform: translateX(0) translateY(0); }
-  10% { transform: translateX(-3.33%) translateY(-5px); }
-  20% { transform: translateX(-6.66%) translateY(-10px); }
-  30% { transform: translateX(-9.99%) translateY(-15px); }
-  40% { transform: translateX(-13.32%) translateY(-10px); }
+  10% { transform: translateX(-3.33%) translateY(9px); }
+  20% { transform: translateX(-6.66%) translateY(14px); }
+  30% { transform: translateX(-9.99%) translateY(14px); }
+  40% { transform: translateX(-13.32%) translateY(9px); }
   50% { transform: translateX(-16.65%) translateY(0); }
-  60% { transform: translateX(-19.98%) translateY(5px); }
-  70% { transform: translateX(-23.31%) translateY(10px); }
-  80% { transform: translateX(-26.64%) translateY(15px); }
-  90% { transform: translateX(-29.97%) translateY(10px); }
+  60% { transform: translateX(-19.98%) translateY(-9px); }
+  70% { transform: translateX(-23.31%) translateY(-14px); }
+  80% { transform: translateX(-26.64%) translateY(-14px); }
+  90% { transform: translateX(-29.97%) translateY(-9px); }
   100% { transform: translateX(-33.33%) translateY(0); }
 }
 
 @keyframes wave-animation-2 {
-  0% { transform: translateX(0) translateY(0); }
-  10% { transform: translateX(-3.33%) translateY(4px); }
-  20% { transform: translateX(-6.66%) translateY(8px); }
-  30% { transform: translateX(-9.99%) translateY(12px); }
-  40% { transform: translateX(-13.32%) translateY(8px); }
-  50% { transform: translateX(-16.65%) translateY(0); }
-  60% { transform: translateX(-19.98%) translateY(-4px); }
-  70% { transform: translateX(-23.31%) translateY(-8px); }
-  80% { transform: translateX(-26.64%) translateY(-12px); }
-  90% { transform: translateX(-29.97%) translateY(-8px); }
-  100% { transform: translateX(-33.33%) translateY(0); }
+  0% { transform: translateX(0) translateY(12px); }
+  10% { transform: translateX(-3.33%) translateY(10px); }
+  20% { transform: translateX(-6.66%) translateY(4px); }
+  30% { transform: translateX(-9.99%) translateY(-4px); }
+  40% { transform: translateX(-13.32%) translateY(-10px); }
+  50% { transform: translateX(-16.65%) translateY(-12px); }
+  60% { transform: translateX(-19.98%) translateY(-10px); }
+  70% { transform: translateX(-23.31%) translateY(-4px); }
+  80% { transform: translateX(-26.64%) translateY(4px); }
+  90% { transform: translateX(-29.97%) translateY(10px); }
+  100% { transform: translateX(-33.33%) translateY(12px); }
 }
 
 @keyframes wave-animation-3 {
   0% { transform: translateX(0) translateY(0); }
-  10% { transform: translateX(-3.33%) translateY(-6px); }
-  20% { transform: translateX(-6.66%) translateY(-12px); }
-  30% { transform: translateX(-9.99%) translateY(-18px); }
-  40% { transform: translateX(-13.32%) translateY(-12px); }
+  10% { transform: translateX(-3.33%) translateY(11px); }
+  20% { transform: translateX(-6.66%) translateY(17px); }
+  30% { transform: translateX(-9.99%) translateY(17px); }
+  40% { transform: translateX(-13.32%) translateY(11px); }
   50% { transform: translateX(-16.65%) translateY(0); }
-  60% { transform: translateX(-19.98%) translateY(6px); }
-  70% { transform: translateX(-23.31%) translateY(12px); }
-  80% { transform: translateX(-26.64%) translateY(18px); }
-  90% { transform: translateX(-29.97%) translateY(12px); }
+  60% { transform: translateX(-19.98%) translateY(-11px); }
+  70% { transform: translateX(-23.31%) translateY(-17px); }
+  80% { transform: translateX(-26.64%) translateY(-17px); }
+  90% { transform: translateX(-29.97%) translateY(-11px); }
   100% { transform: translateX(-33.33%) translateY(0); }
 }
 
 @keyframes wave-animation-4 {
-  0% { transform: translateX(0) translateY(0); }
-  10% { transform: translateX(-3.33%) translateY(3px); }
-  20% { transform: translateX(-6.66%) translateY(6px); }
-  30% { transform: translateX(-9.99%) translateY(8px); }
-  40% { transform: translateX(-13.32%) translateY(6px); }
-  50% { transform: translateX(-16.65%) translateY(0); }
-  60% { transform: translateX(-19.98%) translateY(-3px); }
-  70% { transform: translateX(-23.31%) translateY(-6px); }
-  80% { transform: translateX(-26.64%) translateY(-8px); }
-  90% { transform: translateX(-29.97%) translateY(-6px); }
-  100% { transform: translateX(-33.33%) translateY(0); }
+  0% { transform: translateX(0) translateY(8px); }
+  10% { transform: translateX(-3.33%) translateY(7px); }
+  20% { transform: translateX(-6.66%) translateY(3px); }
+  30% { transform: translateX(-9.99%) translateY(-3px); }
+  40% { transform: translateX(-13.32%) translateY(-7px); }
+  50% { transform: translateX(-16.65%) translateY(-8px); }
+  60% { transform: translateX(-19.98%) translateY(-7px); }
+  70% { transform: translateX(-23.31%) translateY(-3px); }
+  80% { transform: translateX(-26.64%) translateY(3px); }
+  90% { transform: translateX(-29.97%) translateY(7px); }
+  100% { transform: translateX(-33.33%) translateY(8px); }
 }
+
 
 /* RWD 響應式設計：針對手機等小螢幕裝置調整高度 */
 @media (max-width: 768px) {
