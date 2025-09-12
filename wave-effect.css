@@ -149,7 +149,7 @@
   animation-delay: 3s !important;
 }
 
-/* 【新增】飛魚夥伴 1 */
+/* 飛魚夥伴 1 */
 .flying-fish-2 {
   display: block !important;
   position: absolute !important;
@@ -170,7 +170,7 @@
   animation-delay: 4.5s !important; /* 延遲出現 */
 }
 
-/* 【新增】飛魚夥伴 2 */
+/* 【已優化】飛魚夥伴 2 */
 .flying-fish-3 {
   display: block !important;
   position: absolute !important;
@@ -183,9 +183,9 @@
   background-repeat: no-repeat !important;
   z-index: 8 !important;
   opacity: 0;
-  transform: scale(1.1); /* 尺寸稍大 */
+  /* transform: scale(1.1); */ /* 【已移除】尺寸恢復正常 */
   animation-name: fish-animation !important;
-  animation-duration: 19s !important; /* 速度稍慢 */
+  animation-duration: 18.5s !important; /* 【已調整】速度更和諧 */
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-delay: 6s !important; /* 更晚出現 */
@@ -226,7 +226,7 @@
   100% { transform: translateX(110vw) translateY(5px) rotate(2deg); }
 }
 
-/* 水手沉沒動畫 (電腦版) */
+/* 【已優化】水手沉沒動畫，角度更戲劇化 */
 @keyframes sinking-animation {
   0%   { transform: translateX(0vw) translateY(10px) rotate(-2deg); opacity: 1; }
   10%  { transform: translateX(11vw) translateY(-5px) rotate(3deg); opacity: 1; }
@@ -238,30 +238,30 @@
   70%  { transform: translateX(77vw) translateY(-12px) rotate(1deg); opacity: 1; }
   80%  { transform: translateX(88vw) translateY(5px) rotate(0deg); opacity: 1; }
   85%  { transform: translateX(93.5vw) translateY(-5px) rotate(-2deg); opacity: 1; }
-  90%  { transform: translateX(99vw) translateY(40px) rotate(15deg); opacity: 1; }
-  100% { transform: translateX(104.5vw) translateY(150px) rotate(45deg); opacity: 0; }
+  90%  { transform: translateX(99vw) translateY(40px) rotate(30deg); opacity: 1; } /* 角度增加 */
+  100% { transform: translateX(104.5vw) translateY(150px) rotate(75deg); opacity: 0; } /* 角度增加 */
 }
 
-/* 【已更新】飛魚動畫，再次降低高度 */
+/* 【已優化】飛魚動畫，再次降低高度 */
 @keyframes fish-animation {
   /* -- 第一個跳躍 -- */
-  0%    { transform: translateX(0vw) translateY(5px) rotate(0deg); opacity: 0; }
-  2%    { transform: translateX(3vw) translateY(1.25px) rotate(0deg); opacity: 1; }
-  16.5% { transform: translateX(20vw) translateY(-8.75px) rotate(45deg); } /* 最高點 */
-  31%   { transform: translateX(37vw) translateY(1.25px) rotate(90deg); opacity: 1; }
-  33%   { transform: translateX(40vw) translateY(5px) rotate(90deg); opacity: 0; }
+  0%    { transform: translateX(0vw) translateY(2.5px) rotate(0deg); opacity: 0; }
+  2%    { transform: translateX(3vw) translateY(0.6px) rotate(0deg); opacity: 1; }
+  16.5% { transform: translateX(20vw) translateY(-4.4px) rotate(45deg); } /* 最高點 */
+  31%   { transform: translateX(37vw) translateY(0.6px) rotate(90deg); opacity: 1; }
+  33%   { transform: translateX(40vw) translateY(2.5px) rotate(90deg); opacity: 0; }
   /* -- 第二個跳躍 -- */
-  33.1% { transform: translateX(40vw) translateY(5px) rotate(0deg); opacity: 0; }
-  35.1% { transform: translateX(43vw) translateY(1.25px) rotate(0deg); opacity: 1; }
-  49.5% { transform: translateX(60vw) translateY(-8.75px) rotate(45deg); }
-  64.1% { transform: translateX(77vw) translateY(1.25px) rotate(90deg); opacity: 1; }
-  66%   { transform: translateX(80vw) translateY(5px) rotate(90deg); opacity: 0; }
+  33.1% { transform: translateX(40vw) translateY(2.5px) rotate(0deg); opacity: 0; }
+  35.1% { transform: translateX(43vw) translateY(0.6px) rotate(0deg); opacity: 1; }
+  49.5% { transform: translateX(60vw) translateY(-4.4px) rotate(45deg); }
+  64.1% { transform: translateX(77vw) translateY(0.6px) rotate(90deg); opacity: 1; }
+  66%   { transform: translateX(80vw) translateY(2.5px) rotate(90deg); opacity: 0; }
   /* -- 第三個跳躍 -- */
-  66.1% { transform: translateX(80vw) translateY(5px) rotate(0deg); opacity: 0; }
-  68.1% { transform: translateX(83vw) translateY(1.25px) rotate(0deg); opacity: 1; }
-  82.5% { transform: translateX(100vw) translateY(-8.75px) rotate(45deg); }
-  97.1% { transform: translateX(117vw) translateY(1.25px) rotate(90deg); opacity: 1; }
-  100%  { transform: translateX(120vw) translateY(5px) rotate(90deg); opacity: 0; }
+  66.1% { transform: translateX(80vw) translateY(2.5px) rotate(0deg); opacity: 0; }
+  68.1% { transform: translateX(83vw) translateY(0.6px) rotate(0deg); opacity: 1; }
+  82.5% { transform: translateX(100vw) translateY(-4.4px) rotate(45deg); }
+  97.1% { transform: translateX(117vw) translateY(0.6px) rotate(90deg); opacity: 1; }
+  100%  { transform: translateX(120vw) translateY(2.5px) rotate(90deg); opacity: 0; }
 }
 
 /* RWD 響應式設計 */
@@ -315,7 +315,7 @@
     100% { transform: translateX(110vw) translateY(3px) rotate(2deg); }
   }
 
-  /* 水手沉沒動畫 (手機版) */
+  /* 【已優化】水手沉沒動畫 (手機版)，角度更戲劇化 */
   @keyframes sinking-animation-mobile {
     0%   { transform: translateX(0vw) translateY(6px) rotate(-2deg); opacity: 1; }
     10%  { transform: translateX(11vw) translateY(-3px) rotate(3deg); opacity: 1; }
@@ -327,30 +327,30 @@
     70%  { transform: translateX(77vw) translateY(-7px) rotate(1deg); opacity: 1; }
     80%  { transform: translateX(88vw) translateY(3px) rotate(0deg); opacity: 1; }
     85%  { transform: translateX(93.5vw) translateY(-3px) rotate(-2deg); opacity: 1; }
-    90%  { transform: translateX(99vw) translateY(25px) rotate(15deg); opacity: 1; }
-    100% { transform: translateX(104.5vw) translateY(90px) rotate(45deg); opacity: 0; }
+    90%  { transform: translateX(99vw) translateY(25px) rotate(30deg); opacity: 1; } /* 角度增加 */
+    100% { transform: translateX(104.5vw) translateY(90px) rotate(75deg); opacity: 0; } /* 角度增加 */
   }
 
-  /* 【已更新】手機版飛魚動畫，再次降低高度 */
+  /* 【已優化】手機版飛魚動畫，再次降低高度 */
   @keyframes fish-animation-mobile {
     /* -- 第一個跳躍 -- */
-    0%    { transform: translateX(0vw) translateY(3px) rotate(0deg); opacity: 0; }
-    2%    { transform: translateX(3vw) translateY(0.5px) rotate(0deg); opacity: 1; }
-    16.5% { transform: translateX(20vw) translateY(-5.5px) rotate(45deg); }
-    31%   { transform: translateX(37vw) translateY(0.5px) rotate(90deg); opacity: 1; }
-    33%   { transform: translateX(40vw) translateY(3px) rotate(90deg); opacity: 0; }
+    0%    { transform: translateX(0vw) translateY(1.5px) rotate(0deg); opacity: 0; }
+    2%    { transform: translateX(3vw) translateY(0.3px) rotate(0deg); opacity: 1; }
+    16.5% { transform: translateX(20vw) translateY(-2.8px) rotate(45deg); }
+    31%   { transform: translateX(37vw) translateY(0.3px) rotate(90deg); opacity: 1; }
+    33%   { transform: translateX(40vw) translateY(1.5px) rotate(90deg); opacity: 0; }
     /* -- 第二個跳躍 -- */
-    33.1% { transform: translateX(40vw) translateY(3px) rotate(0deg); opacity: 0; }
-    35.1% { transform: translateX(43vw) translateY(0.5px) rotate(0deg); opacity: 1; }
-    49.5% { transform: translateX(60vw) translateY(-5.5px) rotate(45deg); }
-    64.1% { transform: translateX(77vw) translateY(0.5px) rotate(90deg); opacity: 1; }
-    66%   { transform: translateX(80vw) translateY(3px) rotate(90deg); opacity: 0; }
+    33.1% { transform: translateX(40vw) translateY(1.5px) rotate(0deg); opacity: 0; }
+    35.1% { transform: translateX(43vw) translateY(0.3px) rotate(0deg); opacity: 1; }
+    49.5% { transform: translateX(60vw) translateY(-2.8px) rotate(45deg); }
+    64.1% { transform: translateX(77vw) translateY(0.3px) rotate(90deg); opacity: 1; }
+    66%   { transform: translateX(80vw) translateY(1.5px) rotate(90deg); opacity: 0; }
     /* -- 第三個跳躍 -- */
-    66.1% { transform: translateX(80vw) translateY(3px) rotate(0deg); opacity: 0; }
-    68.1% { transform: translateX(83vw) translateY(1.25px) rotate(0deg); opacity: 1; }
-    82.5% { transform: translateX(100vw) translateY(-5.5px) rotate(45deg); }
-    97.1% { transform: translateX(117vw) translateY(0.5px) rotate(90deg); opacity: 1; }
-    100%  { transform: translateX(120vw) translateY(3px) rotate(90deg); opacity: 0; }
+    66.1% { transform: translateX(80vw) translateY(1.5px) rotate(0deg); opacity: 0; }
+    68.1% { transform: translateX(83vw) translateY(0.6px) rotate(0deg); opacity: 1; }
+    82.5% { transform: translateX(100vw) translateY(-2.8px) rotate(45deg); }
+    97.1% { transform: translateX(117vw) translateY(0.3px) rotate(90deg); opacity: 1; }
+    100%  { transform: translateX(120vw) translateY(1.5px) rotate(90deg); opacity: 0; }
   }
 }
 
