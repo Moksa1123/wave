@@ -2,6 +2,7 @@
  * 【最終改良版】純 CSS 海浪效果
  * 這個版本移除了所有 SVG，回到唯一可運作的 border-radius 方案，
  * 並透過調整尺寸，讓波浪形狀更寬闊、更自然。
+ * 新增了多步 Keyframe，讓波浪有自然的上下起伏。
  */
 
 /* 主要容器，用來建立海浪的視窗 */
@@ -28,53 +29,59 @@
 
 /* 為不同層次的波浪設定不同的顏色、位置和動畫速度 */
 .wave.wave1 {
-  background: rgba(30, 58, 138, 0.7);
-  bottom: -285% !important; /* 【已改良】調整定位 */
+  background: rgba(30, 58, 138, 0.7); /* 深藍 */
+  bottom: -285% !important;
   animation-name: wave-animation-1 !important;
   animation-duration: 15s !important;
 }
 
 .wave.wave2 {
-  background: rgba(59, 130, 246, 0.5);
-  bottom: -282% !important; /* 【已改良】調整定位 */
+  background: rgba(59, 130, 246, 0.5); /* 中藍 */
+  bottom: -282% !important;
   animation-name: wave-animation-2 !important;
   animation-duration: 12s !important;
 }
 
 .wave.wave3 {
-  background: rgba(96, 165, 250, 0.3);
-  bottom: -280% !important; /* 【已改良】調整定位 */
+  background: rgba(96, 165, 250, 0.3); /* 淺藍 */
+  bottom: -280% !important;
   animation-name: wave-animation-3 !important;
   animation-duration: 18s !important;
 }
 
-/* 第 4 層浪花 */
+/* 第 4 層浪花 - 已更新為白色 */
 .wave.wave4 {
-  background: rgba(0, 0, 0, 0.1);
-  bottom: -278% !important; /* 【已改良】調整定位 */
+  background: rgba(255, 255, 255, 0.5); /* 白色浪花 */
+  bottom: -278% !important;
   animation-name: wave-animation-4 !important;
   animation-duration: 8s !important;
 }
 
-/* 【已修正】為每一層波浪定義平滑的水平移動動畫 */
+/* 【已更新】為每一層波浪定義包含上下起伏的複雜動畫 */
 @keyframes wave-animation-1 {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.33%); }
+  0% { transform: translateX(0) translateY(0); }
+  50% { transform: translateX(-16.66%) translateY(-15px); }
+  100% { transform: translateX(-33.33%) translateY(0); }
 }
 
 @keyframes wave-animation-2 {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.33%); }
+  0% { transform: translateX(0) translateY(0); }
+  40% { transform: translateX(-13.33%) translateY(10px); }
+  100% { transform: translateX(-33.33%) translateY(0); }
 }
 
 @keyframes wave-animation-3 {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.33%); }
+  0% { transform: translateX(0) translateY(0); }
+  60% { transform: translateX(-20%) translateY(-12px); }
+  100% { transform: translateX(-33.33%) translateY(0); }
 }
 
 @keyframes wave-animation-4 {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.33%); }
+  0% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(-8.33%) translateY(-8px); }
+  50% { transform: translateX(-16.66%) translateY(5px); }
+  75% { transform: translateX(-25%) translateY(-8px); }
+  100% { transform: translateX(-33.33%) translateY(0); }
 }
 
 /* RWD 響應式設計：針對手機等小螢幕裝置調整高度 */
