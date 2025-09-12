@@ -353,3 +353,267 @@
   }
 }
 
+/* --- WordCamp Taiwan 2025 Schedule Styles --- */
+/* 將這些樣式貼到「外觀」>「自訂」>「附加的 CSS」 */
+
+/* --- 全局變數定義 --- */
+.wctw-schedule-container {
+    --font-family-inter: 'Inter', sans-serif;
+    --color-text-primary: #111827;
+    --color-text-secondary: #6B7280;
+    --color-background: #F9FAFB;
+    --color-surface: #FFFFFF;
+    --color-border: #E5E7EB;
+    
+    /* Tag Colors */
+    --tag-dev: #F97316;
+    --tag-design: #84CC16;
+    --tag-marketing: #14B8A6;
+    --tag-community: #06B6D4;
+    --tag-hosting: #3B82F6;
+    --tag-business: #8B5CF6;
+
+    /* Level Colors */
+    --level-beginner-bg: #E5E7EB;
+    --level-beginner-text: #1F2937;
+    --level-intermediate-bg: #9CA3AF;
+    --level-advanced-bg: #4B5563;
+    --level-text-white: #FFFFFF;
+}
+
+/* --- 基礎與排版 --- */
+/* 將樣式限定在容器內，避免影響整個網站 */
+.wctw-schedule-container {
+    font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 48px 0;
+}
+
+/* --- 版面佈局 --- */
+.wctw-schedule-container .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.wctw-schedule-container .main-title {
+    font-family: var(--font-family-inter);
+    font-size: clamp(2rem, 5vw, 2.5rem); /* 響應式字體 */
+    text-align: center;
+    margin: 0 auto 56px;
+    font-weight: 700;
+}
+
+.wctw-schedule-container .event-day {
+    margin-bottom: 64px;
+}
+
+.wctw-schedule-container .day-header {
+    font-family: var(--font-family-inter);
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: 500;
+    text-align: center;
+    margin: 0 auto 32px;
+}
+
+/* --- 表格外層容器 --- */
+.wctw-schedule-container .table-static-wrapper {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
+    overflow: hidden; /* Clips table corners */
+}
+        
+.wctw-schedule-container .table-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* iOS 流暢滾動 */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-border);
+}
+
+/* --- 表格樣式 --- */
+.wctw-schedule-container .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: var(--color-surface);
+}
+        
+/* 這個規則只應用於需要滾動的表格，確保在小螢幕上有最小寬度 */
+.wctw-schedule-container .table-scroll-wrapper .schedule-table {
+    min-width: 768px; 
+}
+        
+.wctw-schedule-container .schedule-table th {
+    font-family: var(--font-family-inter);
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--level-text-white);
+    padding: 12px 24px;
+    text-align: center;
+    white-space: nowrap;
+    /* 增加標頭儲存格之間的左側框線，使用半透明白色以搭配背景色 */
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 移除第一個標頭儲存格的左側框線 */
+.wctw-schedule-container .schedule-table th:first-child {
+    border-left: none;
+}
+        
+.wctw-schedule-container .schedule-table .th-time { background-color: #4F46E5; }
+.wctw-schedule-container .schedule-table .th-location-1 { background-color: #F59E0B; }
+.wctw-schedule-container .schedule-table .th-track-a { background-color: #818CF8; }
+.wctw-schedule-container .schedule-table .th-track-b { background-color: #4F46E5; }
+
+.wctw-schedule-container .schedule-table td {
+    padding: 0;
+    vertical-align: top;
+}
+
+.wctw-schedule-container .schedule-table tr {
+    border-bottom: 1px solid var(--color-border);
+}
+.wctw-schedule-container .schedule-table tr:last-child {
+    border-bottom: none;
+}
+        
+/* --- 儲存格樣式 --- */
+.wctw-schedule-container .time-cell {
+    font-family: var(--font-family-inter);
+    font-weight: 500;
+    font-size: 18px;
+    padding: 20px 24px;
+    text-align: center;
+    vertical-align: middle;
+    width: 140px;
+    white-space: nowrap;
+    /* 增加時間欄右側的垂直分隔線 */
+    border-right: 1px solid var(--color-border);
+}
+        
+.wctw-schedule-container .schedule-table tr:nth-child(even) .time-cell,
+.wctw-schedule-container .schedule-table tr:nth-child(even) .session-container,
+.wctw-schedule-container .schedule-table tr:nth-child(even) .break-session {
+    background-color: #F3F4F6;
+}
+.wctw-schedule-container .schedule-table tr:nth-child(odd) .time-cell,
+.wctw-schedule-container .schedule-table tr:nth-child(odd) .session-container,
+.wctw-schedule-container .schedule-table tr:nth-child(odd) .break-session {
+    background-color: var(--color-surface);
+}
+
+/* --- 議程與休息樣式 --- */
+.wctw-schedule-container .session-container {
+    padding: 20px 24px;
+    border-left: 1px solid var(--color-border);
+    min-width: 300px; /* Give session columns a minimum width */
+}
+        
+.wctw-schedule-container .table-static-wrapper .session-container {
+    min-width: unset;
+}
+
+.wctw-schedule-container .session-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.wctw-schedule-container .tag {
+    font-family: var(--font-family-inter);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 16px;
+    border-radius: 9999px;
+    color: var(--level-text-white);
+}
+        
+.wctw-schedule-container .tag-dev { background-color: var(--tag-dev); }
+.wctw-schedule-container .tag-design { background-color: var(--tag-design); }
+.wctw-schedule-container .tag-marketing { background-color: var(--tag-marketing); }
+.wctw-schedule-container .tag-community { background-color: var(--tag-community); }
+.wctw-schedule-container .tag-hosting { background-color: var(--tag-hosting); }
+.wctw-schedule-container .tag-business { background-color: var(--tag-business); }
+        
+.wctw-schedule-container .tag-beginner { background-color: var(--level-beginner-bg); color: var(--level-beginner-text); }
+.wctw-schedule-container .tag-intermediate { background-color: var(--level-intermediate-bg); }
+.wctw-schedule-container .tag-advanced { background-color: var(--level-advanced-bg); }
+        
+.wctw-schedule-container .session-content {
+    margin-bottom: 12px;
+    min-height: 54px; /* Ensure consistent height for content area */
+}
+
+.wctw-schedule-container .session-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 0 4px 0;
+}
+
+.wctw-schedule-container .session-speaker {
+    font-size: 16px;
+    color: var(--color-text-secondary);
+}
+        
+.wctw-schedule-container .session-time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-family-inter);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--color-text-primary);
+}
+
+.wctw-schedule-container .session-time svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.wctw-schedule-container .break-session {
+    padding: 20px 24px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+        
+.wctw-schedule-container .table-static-wrapper .break-session {
+    text-align: center;
+}
+
+/* --- 響應式調整 --- */
+@media screen and (max-width: 768px) {
+    .wctw-schedule-container {
+        padding: 24px 0;
+    }
+    .wctw-schedule-container .container {
+        padding: 0;
+    }
+    .wctw-schedule-container .main-title {
+        margin-bottom: 40px;
+        padding: 0 16px;
+    }
+    .wctw-schedule-container .day-header {
+        margin: 0 auto 24px;
+        padding: 0 16px;
+    }
+    .wctw-schedule-container .table-scroll-wrapper,
+    .wctw-schedule-container .table-static-wrapper {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+}
+
+
+
+
