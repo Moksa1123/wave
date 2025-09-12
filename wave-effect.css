@@ -97,11 +97,11 @@
   height: 160px !important;
   bottom: 0 !important;
   right: 15px !important;
-  background: #ffffff !important;
+  background: #e0e0e0 !important; /* 淺灰色背景 */
   z-index: 1 !important; /* 在波浪後面 */
   clip-path: polygon(30% 0%, 40% 20%, 60% 10%, 75% 30%, 80% 25%, 100% 100%, 0% 100%);
-  /* 堆疊陰影製造粗邊框 */
-  filter: drop-shadow(2px 0px 0 #333) drop-shadow(-2px 0px 0 #333) drop-shadow(0px -2px 0 #333) drop-shadow(2px -2px 0 #333) drop-shadow(-2px -2px 0 #333);
+  /* 堆疊陰影製造粗黑邊框 */
+  filter: drop-shadow(2px 0px 0 #000) drop-shadow(-2px 0px 0 #000) drop-shadow(0px -2px 0 #000) drop-shadow(2px -2px 0 #000) drop-shadow(-2px -2px 0 #000);
 }
 
 .iceberg-2 {
@@ -111,10 +111,10 @@
   height: 120px !important;
   bottom: 0 !important;
   right: 160px !important; /* 在主冰山左邊 */
-  background: #f0f0f0 !important; /* 顏色稍暗 */
+  background: #d0d0d0 !important; /* 顏色稍暗 */
   z-index: 1 !important;
   clip-path: polygon(20% 15%, 45% 0%, 60% 20%, 80% 10%, 100% 100%, 0% 100%);
-  filter: drop-shadow(2px 0px 0 #333) drop-shadow(-2px 0px 0 #333) drop-shadow(0px -2px 0 #333);
+  filter: drop-shadow(2px 0px 0 #000) drop-shadow(-2px 0px 0 #000) drop-shadow(0px -2px 0 #000);
 }
 
 .iceberg-3 {
@@ -124,10 +124,10 @@
   height: 80px !important;
   bottom: 0 !important;
   right: 0px !important; /* 在主冰山右邊 */
-  background: #e9e9e9 !important; /* 顏色更暗 */
+  background: #c0c0c0 !important; /* 顏色更暗 */
   z-index: 1 !important;
   clip-path: polygon(25% 0%, 50% 10%, 75% 0%, 100% 100%, 0% 100%);
-  filter: drop-shadow(1.5px 0px 0 #333) drop-shadow(-1.5px 0px 0 #333) drop-shadow(0px -1.5px 0 #333);
+  filter: drop-shadow(1.5px 0px 0 #000) drop-shadow(-1.5px 0px 0 #000) drop-shadow(0px -1.5px 0 #000);
 }
 
 
@@ -202,14 +202,28 @@
   100% { transform: translateX(104.5vw) translateY(150px) rotate(45deg); opacity: 0; }
 }
 
-/* 【已更新】全新的流暢飛魚動畫 */
+/* 【已更新】全新的流暢飛魚動畫 (每 5% 一格) */
 @keyframes fish-animation {
-  0% { transform: translateX(0vw) translateY(0) rotate(0deg); opacity: 1; }
-  20% { transform: translateX(25vw) translateY(-60px) rotate(20deg); }
-  40% { transform: translateX(50vw) translateY(-80px) rotate(0deg); }
-  60% { transform: translateX(75vw) translateY(-60px) rotate(-20deg); }
-  80% { transform: translateX(100vw) translateY(0) rotate(0deg); }
-  100% { transform: translateX(120vw) translateY(0) rotate(0deg); }
+  0% { transform: translateX(0vw) translateY(0px) rotate(-25deg); opacity: 1; }
+  5% { transform: translateX(6vw) translateY(-30px) rotate(-15deg); }
+  10% { transform: translateX(12vw) translateY(-50px) rotate(0deg); }
+  15% { transform: translateX(18vw) translateY(-60px) rotate(15deg); }
+  20% { transform: translateX(24vw) translateY(-50px) rotate(25deg); }
+  25% { transform: translateX(30vw) translateY(-30px) rotate(15deg); }
+  30% { transform: translateX(36vw) translateY(0px) rotate(0deg); }
+  35% { transform: translateX(42vw) translateY(-30px) rotate(-15deg); }
+  40% { transform: translateX(48vw) translateY(-50px) rotate(0deg); }
+  45% { transform: translateX(54vw) translateY(-60px) rotate(15deg); }
+  50% { transform: translateX(60vw) translateY(-50px) rotate(25deg); }
+  55% { transform: translateX(66vw) translateY(-30px) rotate(15deg); }
+  60% { transform: translateX(72vw) translateY(0px) rotate(0deg); }
+  65% { transform: translateX(78vw) translateY(-30px) rotate(-15deg); }
+  70% { transform: translateX(84vw) translateY(-50px) rotate(0deg); }
+  75% { transform: translateX(90vw) translateY(-60px) rotate(15deg); }
+  80% { transform: translateX(96vw) translateY(-50px) rotate(25deg); }
+  85% { transform: translateX(102vw) translateY(-30px) rotate(15deg); }
+  90% { transform: translateX(108vw) translateY(0px) rotate(0deg); }
+  100% { transform: translateX(120vw) translateY(0px) rotate(0deg); }
 }
 
 
@@ -287,12 +301,26 @@
 
   /* 【已更新】手機版飛魚動畫 */
   @keyframes fish-animation-mobile {
-    0% { transform: translateX(0vw) translateY(0) rotate(0deg); opacity: 1; }
-    20% { transform: translateX(25vw) translateY(-40px) rotate(20deg); }
-    40% { transform: translateX(50vw) translateY(-55px) rotate(0deg); }
-    60% { transform: translateX(75vw) translateY(-40px) rotate(-20deg); }
-    80% { transform: translateX(100vw) translateY(0) rotate(0deg); }
-    100% { transform: translateX(120vw) translateY(0) rotate(0deg); }
+    0% { transform: translateX(0vw) translateY(0px) rotate(-25deg); opacity: 1; }
+    5% { transform: translateX(6vw) translateY(-20px) rotate(-15deg); }
+    10% { transform: translateX(12vw) translateY(-35px) rotate(0deg); }
+    15% { transform: translateX(18vw) translateY(-45px) rotate(15deg); }
+    20% { transform: translateX(24vw) translateY(-35px) rotate(25deg); }
+    25% { transform: translateX(30vw) translateY(-20px) rotate(15deg); }
+    30% { transform: translateX(36vw) translateY(0px) rotate(0deg); }
+    35% { transform: translateX(42vw) translateY(-20px) rotate(-15deg); }
+    40% { transform: translateX(48vw) translateY(-35px) rotate(0deg); }
+    45% { transform: translateX(54vw) translateY(-45px) rotate(15deg); }
+    50% { transform: translateX(60vw) translateY(-35px) rotate(25deg); }
+    55% { transform: translateX(66vw) translateY(-20px) rotate(15deg); }
+    60% { transform: translateX(72vw) translateY(0px) rotate(0deg); }
+    65% { transform: translateX(78vw) translateY(-20px) rotate(-15deg); }
+    70% { transform: translateX(84vw) translateY(-35px) rotate(0deg); }
+    75% { transform: translateX(90vw) translateY(-45px) rotate(15deg); }
+    80% { transform: translateX(96vw) translateY(-35px) rotate(25deg); }
+    85% { transform: translateX(102vw) translateY(-20px) rotate(15deg); }
+    90% { transform: translateX(108vw) translateY(0px) rotate(0deg); }
+    100% { transform: translateX(120vw) translateY(0px) rotate(0deg); }
   }
 }
 
