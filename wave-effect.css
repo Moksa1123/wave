@@ -500,7 +500,7 @@
 .wctw-schedule-container .schedule-table tr:nth-child(even) .time-cell,
 .wctw-schedule-container .schedule-table tr:nth-child(even) .session-container,
 .wctw-schedule-container .schedule-table tr:nth-child(even) .break-session {
-    background-color: #EFF0FF; /* 將偶數行背景從淺灰色改為淡藍紫色 */
+    background-color: #D9DCFF; /* 將偶數行背景加深，原為 #EFF0FF */
 }
 .wctw-schedule-container .schedule-table tr:nth-child(odd) .time-cell,
 .wctw-schedule-container .schedule-table tr:nth-child(odd) .session-container,
@@ -613,9 +613,4 @@
         border-right: none;
     }
 }
-
-
-
-
-
 
