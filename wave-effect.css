@@ -55,7 +55,7 @@
   position: absolute !important;
   width: 80px !important; /* 物件寬度 */
   height: 80px !important; /* 物件高度 */
-  bottom: 70px !important; /* 【已再次調低】初始垂直位置，更貼近海浪 */
+  bottom: 40px !important; /* 【已再次調低】初始垂直位置，更深入海浪 */
   left: 50% !important; /* 初始水平位置 (置中) */
   transform: translateX(-50%); /* 精準置中 */
   background-image: url('https://taiwan.wordcamp.org/2025/files/2025/09/芒果艦長.png'); /* 【已更新為您的圖片網址】 */
@@ -112,18 +112,18 @@
   100% { transform: translateX(-33.33%) translateY(0); }
 }
 
-/* 【已更新】讓漂浮物體跟著前後移動，並增加起伏，擴充至每10%一格 */
+/* 【已更新】大幅擴展漂浮物體的移動範圍 */
 @keyframes float-animation {
   0% { transform: translateX(-50%) translateY(0px) rotate(0deg); }
-  10% { transform: translateX(calc(-50% - 15px)) translateY(-8px) rotate(-3deg); }
-  20% { transform: translateX(calc(-50% - 30px)) translateY(-15px) rotate(-6deg); }
-  30% { transform: translateX(calc(-50% - 40px)) translateY(-18px) rotate(-8deg); }
-  40% { transform: translateX(calc(-50% - 25px)) translateY(-12px) rotate(-4deg); }
+  10% { transform: translateX(calc(-50% - 40px)) translateY(-8px) rotate(-3deg); }
+  20% { transform: translateX(calc(-50% - 80px)) translateY(-15px) rotate(-6deg); }
+  30% { transform: translateX(calc(-50% - 100px)) translateY(-18px) rotate(-8deg); }
+  40% { transform: translateX(calc(-50% - 50px)) translateY(-12px) rotate(-4deg); }
   50% { transform: translateX(-50%) translateY(5px) rotate(0deg); }
-  60% { transform: translateX(calc(-50% + 25px)) translateY(-12px) rotate(4deg); }
-  70% { transform: translateX(calc(-50% + 40px)) translateY(-18px) rotate(8deg); }
-  80% { transform: translateX(calc(-50% + 30px)) translateY(-15px) rotate(6deg); }
-  90% { transform: translateX(calc(-50% + 15px)) translateY(-8px) rotate(3deg); }
+  60% { transform: translateX(calc(-50% + 50px)) translateY(-12px) rotate(4deg); }
+  70% { transform: translateX(calc(-50% + 100px)) translateY(-18px) rotate(8deg); }
+  80% { transform: translateX(calc(-50% + 80px)) translateY(-15px) rotate(6deg); }
+  90% { transform: translateX(calc(-50% + 40px)) translateY(-8px) rotate(3deg); }
   100% { transform: translateX(-50%) translateY(0px) rotate(0deg); }
 }
 
