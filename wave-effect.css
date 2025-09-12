@@ -1,118 +1,86 @@
 /*
- * 【精準版】純 CSS 海浪效果
- * 這個版本使用內嵌的 SVG data URI 來達成精準的、非圓角的海浪外型。
- * 這解決了區塊編輯器無法儲存 SVG 標籤的問題。
+ * 【最終改良版】純 CSS 海浪效果
+ * 這個版本移除了所有 SVG，回到唯一可運作的 border-radius 方案，
+ * 並透過調整尺寸，讓波浪形狀更寬闊、更自然。
  */
 
 /* 主要容器，用來建立海浪的視窗 */
 .ocean-container {
   position: relative !important;
   width: 100% !important;
-  height: 250px !important; /* 調整為一個適中的高度 */
+  height: 250px !important;
   background: #ffffff; /* 白色背景 */
   overflow: hidden !important;
   z-index: 0;
 }
 
-/* 波浪的基礎樣式 - 現在使用背景圖片來顯示海浪 */
+/* 這是構成每一層波浪的基礎樣式 */
 .wave {
   display: block !important;
   position: absolute !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: 200% !important; /* 寬度為容器兩倍，以利無縫動畫 */
-  height: 150px !important; /* 波浪本身的高度 */
-  background-repeat: repeat-x !important;
+  border-radius: 100%; /* 使用圓角模擬波浪 */
+  width: 300% !important; /* 【已改良】增加寬度讓曲線更平緩 */
+  height: 300% !important; /* 【已改良】增加高度以配合寬度 */
+  left: -100% !important; /* 【已改良】調整位置以置中 */
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  /* 讓一張背景圖的寬度剛好等於容器寬度 */
-  background-size: 50% 150px !important;
 }
 
-/*
- * 為每一層波浪設定不同的 SVG 背景圖形和動畫。
- * SVG 圖形被編碼成 data URI，直接寫在 CSS 中。
- */
-
-/* 第 1 層波浪 (最底、最深) */
+/* 為不同層次的波浪設定不同的顏色、位置和動畫速度 */
 .wave.wave1 {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100'%3E%3Cpath d='M0,50 Q125,80 250,50 T500,50 Q625,80 750,50 T1000,50 V100 H0 Z' fill='%231E3A8A' fill-opacity='0.7'%3E%3C/path%3E%3C/svg%3E") !important;
-  animation-name: wave-move-1 !important;
+  background: rgba(30, 58, 138, 0.7);
+  bottom: -285% !important; /* 【已改良】調整定位 */
+  animation-name: wave-animation-1 !important;
   animation-duration: 15s !important;
 }
 
-/* 第 2 層波浪 */
 .wave.wave2 {
-  height: 160px !important;
-  background-size: 50% 160px !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100'%3E%3Cpath d='M0,60 Q125,90 250,60 T500,60 Q625,90 750,60 T1000,60 V100 H0 Z' fill='%233B82F6' fill-opacity='0.5'%3E%3C/path%3E%3C/svg%3E") !important;
-  animation-name: wave-move-2 !important;
+  background: rgba(59, 130, 246, 0.5);
+  bottom: -282% !important; /* 【已改良】調整定位 */
+  animation-name: wave-animation-2 !important;
   animation-duration: 12s !important;
 }
 
-/* 第 3 層波浪 */
 .wave.wave3 {
-  height: 170px !important;
-  background-size: 50% 170px !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100'%3E%3Cpath d='M0,55 Q125,70 250,55 T500,55 Q625,70 750,55 T1000,55 V100 H0 Z' fill='%2360A5FA' fill-opacity='0.3'%3E%3C/path%3E%3C/svg%3E") !important;
-  animation-name: wave-move-3 !important;
+  background: rgba(96, 165, 250, 0.3);
+  bottom: -280% !important; /* 【已改良】調整定位 */
+  animation-name: wave-animation-3 !important;
   animation-duration: 18s !important;
 }
 
-/* 第 4 層波浪 (浪花) */
+/* 第 4 層浪花 */
 .wave.wave4 {
-  height: 180px !important;
-  background-size: 50% 180px !important;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100'%3E%3Cpath d='M0,65 Q125,85 250,65 T500,65 Q625,85 750,65 T1000,65 V100 H0 Z' fill='%23000000' fill-opacity='0.1'%3E%3C/path%3E%3C/svg%3E") !important;
-  animation-name: wave-move-4 !important;
+  background: rgba(0, 0, 0, 0.1);
+  bottom: -278% !important; /* 【已改良】調整定位 */
+  animation-name: wave-animation-4 !important;
   animation-duration: 8s !important;
 }
 
-/*
- * 動畫定義 - 透過移動整個波浪元素來達成背景滾動的效果
- * 每一層的起始位置稍有不同，以創造錯落感。
- */
-@keyframes wave-move-1 {
-  from { transform: translateX(0%); }
-  to { transform: translateX(-50%); }
-}
-@keyframes wave-move-2 {
-  from { transform: translateX(-2%); }
-  to { transform: translateX(-52%); }
-}
-@keyframes wave-move-3 {
-  from { transform: translateX(2%); }
-  to { transform: translateX(-48%); }
-}
-@keyframes wave-move-4 {
-  from { transform: translateX(0%); }
-  to { transform: translateX(-50%); }
+/* 為每一層波浪定義不同的動畫，使其不再同步 */
+@keyframes wave-animation-1 {
+  0% { transform: translateX(0) rotate(0deg); }
+  100% { transform: translateX(-33.33%) rotate(360deg); }
 }
 
-/* 【已新增】RWD 響應式設計：針對手機等小螢幕裝置調整高度 */
+@keyframes wave-animation-2 {
+  0% { transform: translateX(0) rotate(0deg); }
+  100% { transform: translateX(-33.33%) rotate(360deg); }
+}
+
+@keyframes wave-animation-3 {
+  0% { transform: translateX(0) rotate(0deg); }
+  100% { transform: translateX(-33.33%) rotate(360deg); }
+}
+
+@keyframes wave-animation-4 {
+  0% { transform: translateX(0) rotate(0deg); }
+  100% { transform: translateX(-33.33%) rotate(360deg); }
+}
+
+/* RWD 響應式設計：針對手機等小螢幕裝置調整高度 */
 @media (max-width: 768px) {
   .ocean-container {
-    height: 150px !important; /* 手機版使用較小的高度 */
-  }
-
-  .wave {
-    height: 100px !important;
-    background-size: 50% 100px !important;
-  }
-
-  .wave.wave2 {
-    height: 110px !important;
-    background-size: 50% 110px !important;
-  }
-
-  .wave.wave3 {
-    height: 120px !important;
-    background-size: 50% 120px !important;
-  }
-
-  .wave.wave4 {
-    height: 130px !important;
-    background-size: 50% 130px !important;
+    height: 150px !important;
   }
 }
 
