@@ -39,7 +39,7 @@
   background: rgba(59, 130, 246, 0.5); /* 中藍 - 主海浪 */
   bottom: -257% !important; /* 已大幅調高 */
   animation-name: wave-animation-2 !important;
-  animation-duration: 20s !important; /* 【已更新】與漂浮物同步 */
+  animation-duration: 20s !important;
 }
 
 .wave.wave3 {
@@ -62,7 +62,7 @@
   background-repeat: no-repeat !important;
   z-index: 9 !important; /* 在後面 */
   animation-name: float-animation !important;
-  animation-duration: 20s !important;
+  animation-duration: 25s !important; /* 【已更新】與水手同步 */
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -80,87 +80,66 @@
   background-repeat: no-repeat !important;
   z-index: 10 !important; /* 在前面 */
   animation-name: sinking-animation !important;
-  animation-duration: 25s !important; /* 動畫時間比艦長慢 */
+  animation-duration: 25s !important; /* 【已更新】與艦長同步 */
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  /* animation-delay: 2s; */ /* 【已移除】確保水手在艦長前面 */
 }
 
 
-/* 【已優化】背景海浪動畫，使其更平滑、無頓挫感 */
+/* 【已優化】海浪動畫改為每 50% 一個完整循環 */
 @keyframes wave-animation-1 {
   0% { transform: translateX(0) translateY(0); }
-  10% { transform: translateX(-3.33%) translateY(9px); }
-  20% { transform: translateX(-6.66%) translateY(14px); }
-  30% { transform: translateX(-9.99%) translateY(14px); }
-  40% { transform: translateX(-13.32%) translateY(9px); }
-  50% { transform: translateX(-16.65%) translateY(0); }
-  60% { transform: translateX(-19.98%) translateY(-9px); }
-  70% { transform: translateX(-23.31%) translateY(-14px); }
-  80% { transform: translateX(-26.64%) translateY(-14px); }
-  90% { transform: translateX(-29.97%) translateY(-9px); }
+  25% { transform: translateX(-8.33%) translateY(-15px); }
+  50% { transform: translateX(-16.66%) translateY(0); }
+  75% { transform: translateX(-25%) translateY(15px); }
   100% { transform: translateX(-33.33%) translateY(0); }
 }
 
-/* 主海浪的動畫，垂直起伏與漂浮物完全同步 */
 @keyframes wave-animation-2 {
-  0% { transform: translateX(0) translateY(5px); }
-  10% { transform: translateX(-3.33%) translateY(-10px); }
-  20% { transform: translateX(-6.66%) translateY(8px); }
-  30% { transform: translateX(-9.99%) translateY(-15px); }
-  40% { transform: translateX(-13.32%) translateY(2px); }
-  50% { transform: translateX(-16.65%) translateY(-12px); }
-  60% { transform: translateX(-19.98%) translateY(10px); }
-  70% { transform: translateX(-23.31%) translateY(-8px); }
-  80% { transform: translateX(-26.64%) translateY(15px); }
-  90% { transform: translateX(-29.97%) translateY(-5px); }
-  100% { transform: translateX(-33.33%) translateY(5px); }
+  0% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(-8.33%) translateY(20px); }
+  50% { transform: translateX(-16.66%) translateY(0); }
+  75% { transform: translateX(-25%) translateY(-20px); }
+  100% { transform: translateX(-33.33%) translateY(0); }
 }
 
-/* 【已優化】背景海浪動畫，使其更平滑、無頓挫感 */
 @keyframes wave-animation-3 {
   0% { transform: translateX(0) translateY(0); }
-  10% { transform: translateX(-3.33%) translateY(-9px); }
-  20% { transform: translateX(-6.66%) translateY(-14px); }
-  30% { transform: translateX(-9.99%) translateY(-14px); }
-  40% { transform: translateX(-13.32%) translateY(-9px); }
-  50% { transform: translateX(-16.65%) translateY(0); }
-  60% { transform: translateX(-19.98%) translateY(9px); }
-  70% { transform: translateX(-23.31%) translateY(14px); }
-  80% { transform: translateX(-26.64%) translateY(14px); }
-  90% { transform: translateX(-29.97%) translateY(9px); }
+  25% { transform: translateX(-8.33%) translateY(-10px); }
+  50% { transform: translateX(-16.66%) translateY(0); }
+  75% { transform: translateX(-25%) translateY(10px); }
   100% { transform: translateX(-33.33%) translateY(0); }
 }
 
-/* 【已優化】芒果艦長從左至右橫跨整個畫面，速度一致 */
+/* 【已優化】芒果艦長動畫，速度一致 */
 @keyframes float-animation {
-  0% { transform: translateX(0) translateY(5px) rotate(2deg); }
-  10% { transform: translateX(calc(10vw + 8px)) translateY(-10px) rotate(-5deg); }
-  20% { transform: translateX(calc(20vw + 16px)) translateY(8px) rotate(4deg); }
-  30% { transform: translateX(calc(30vw + 24px)) translateY(-15px) rotate(-8deg); }
-  40% { transform: translateX(calc(40vw + 32px)) translateY(2px) rotate(3deg); }
-  50% { transform: translateX(calc(50vw + 40px)) translateY(-12px) rotate(-6deg); }
-  60% { transform: translateX(calc(60vw + 48px)) translateY(10px) rotate(5deg); }
-  70% { transform: translateX(calc(70vw + 56px)) translateY(-8px) rotate(-4deg); }
-  80% { transform: translateX(calc(80vw + 64px)) translateY(15px) rotate(8deg); }
-  90% { transform: translateX(calc(90vw + 72px)) translateY(-5px) rotate(-2deg); }
-  100% { transform: translateX(calc(100vw + 80px)) translateY(5px) rotate(2deg); }
+  0% { transform: translateX(0vw) translateY(5px) rotate(2deg); }
+  10% { transform: translateX(11vw) translateY(-10px) rotate(-5deg); }
+  20% { transform: translateX(22vw) translateY(8px) rotate(4deg); }
+  30% { transform: translateX(33vw) translateY(-15px) rotate(-8deg); }
+  40% { transform: translateX(44vw) translateY(2px) rotate(3deg); }
+  50% { transform: translateX(55vw) translateY(-12px) rotate(-6deg); }
+  60% { transform: translateX(66vw) translateY(10px) rotate(5deg); }
+  70% { transform: translateX(77vw) translateY(-8px) rotate(-4deg); }
+  80% { transform: translateX(88vw) translateY(15px) rotate(8deg); }
+  90% { transform: translateX(99vw) translateY(-5px) rotate(-2deg); }
+  100% { transform: translateX(110vw) translateY(5px) rotate(2deg); }
 }
 
-/* 【已優化】鐵達尼號沉沒動畫，速度一致 */
+/* 【已優化】水手沉沒動畫，與艦長等速等距 */
 @keyframes sinking-animation {
-  0% { transform: translateX(0) translateY(10px) rotate(-2deg); opacity: 1; }
-  10% { transform: translateX(calc(10vw + 10px)) translateY(-5px) rotate(3deg); opacity: 1; }
-  20% { transform: translateX(calc(20vw + 20px)) translateY(12px) rotate(-4deg); opacity: 1; }
-  30% { transform: translateX(calc(30vw + 30px)) translateY(-8px) rotate(5deg); opacity: 1; }
-  40% { transform: translateX(calc(40vw + 40px)) translateY(15px) rotate(-6deg); opacity: 1; }
-  50% { transform: translateX(calc(50vw + 50px)) translateY(-10px) rotate(4deg); opacity: 1; }
-  60% { transform: translateX(calc(60vw + 60px)) translateY(8px) rotate(-2deg); opacity: 1; }
-  70% { transform: translateX(calc(70vw + 70px)) translateY(-12px) rotate(1deg); opacity: 1; }
-  80% { transform: translateX(calc(80vw + 80px)) translateY(5px) rotate(0deg); opacity: 1; }
-  90% { transform: translateX(calc(90vw + 90px)) translateY(-5px) rotate(-2deg); opacity: 1; }
-  95% { transform: translateX(calc(95vw + 95px)) translateY(40px) rotate(15deg); opacity: 1; }
-  100% { transform: translateX(calc(100vw + 100px)) translateY(150px) rotate(45deg); opacity: 0; }
+  0% { transform: translateX(10vw) translateY(10px) rotate(-2deg); opacity: 1; }
+  10% { transform: translateX(21vw) translateY(-5px) rotate(3deg); opacity: 1; }
+  20% { transform: translateX(32vw) translateY(12px) rotate(-4deg); opacity: 1; }
+  30% { transform: translateX(43vw) translateY(-8px) rotate(5deg); opacity: 1; }
+  40% { transform: translateX(54vw) translateY(15px) rotate(-6deg); opacity: 1; }
+  50% { transform: translateX(65vw) translateY(-10px) rotate(4deg); opacity: 1; }
+  60% { transform: translateX(76vw) translateY(8px) rotate(-2deg); opacity: 1; }
+  70% { transform: translateX(87vw) translateY(-12px) rotate(1deg); opacity: 1; }
+  80% { transform: translateX(98vw) translateY(5px) rotate(0deg); opacity: 1; }
+  90% { transform: translateX(109vw) translateY(-5px) rotate(-2deg); opacity: 1; }
+  95% { transform: translateX(114vw) translateY(40px) rotate(15deg); opacity: 1; }
+  100% { transform: translateX(119vw) translateY(150px) rotate(45deg); opacity: 0; }
 }
 
 
