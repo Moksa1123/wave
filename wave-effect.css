@@ -363,7 +363,7 @@
     --color-text-secondary: #6B7280;
     --color-background: #F9FAFB;
     --color-surface: #FFFFFF;
-    --color-border: #E5E7EB;
+    --color-border: #D1D5DB; /* 加深框線顏色，原為 #E5E7EB */
     
     /* Tag Colors */
     --tag-dev: #F97316;
@@ -500,7 +500,7 @@
 .wctw-schedule-container .schedule-table tr:nth-child(even) .time-cell,
 .wctw-schedule-container .schedule-table tr:nth-child(even) .session-container,
 .wctw-schedule-container .schedule-table tr:nth-child(even) .break-session {
-    background-color: #F3F4F6;
+    background-color: #EFF0FF; /* 將偶數行背景從淺灰色改為淡藍紫色 */
 }
 .wctw-schedule-container .schedule-table tr:nth-child(odd) .time-cell,
 .wctw-schedule-container .schedule-table tr:nth-child(odd) .session-container,
@@ -613,6 +613,8 @@
         border-right: none;
     }
 }
+
+
 
 
 
