@@ -28,21 +28,21 @@
 /* 為不同層次的波浪設定不同的顏色、位置和動畫速度 */
 .wave.wave1 {
   background: rgba(30, 58, 138, 0.7);
-  bottom: -355% !important; /* 調整高度以配合容器 */
+  bottom: -180% !important; /* 【已修正】調整高度以配合容器 */
   animation-name: wave-animation-1 !important;
   animation-duration: 15s !important;
 }
 
 .wave.wave2 {
   background: rgba(59, 130, 246, 0.5);
-  bottom: -352% !important; /* 調整高度以配合容器 */
+  bottom: -177% !important; /* 【已修正】調整高度以配合容器 */
   animation-name: wave-animation-2 !important;
   animation-duration: 12s !important;
 }
 
 .wave.wave3 {
   background: rgba(96, 165, 250, 0.3);
-  bottom: -350% !important; /* 調整高度以配合容器 */
+  bottom: -175% !important; /* 【已修正】調整高度以配合容器 */
   animation-name: wave-animation-3 !important;
   animation-duration: 18s !important;
 }
@@ -50,7 +50,7 @@
 /* 新增：第四層，用來模擬浪花 */
 .wave.wave4 {
   background: rgba(255, 255, 255, 0.9);
-  bottom: -348% !important; /* 位於最頂層 */
+  bottom: -173% !important; /* 【已修正】位於最頂層 */
   animation-name: wave-animation-4 !important;
   animation-duration: 8s !important; /* 速度最快，更具動感 */
 }
