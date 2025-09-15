@@ -913,31 +913,16 @@
     text-align: center;
     border-right: 1px solid var(--wcs-color-border);
     border-top: 1px solid var(--wcs-color-border);
-    background-color: var(--wcs-color-surface);
+    background-color: var(--wcs-color-row-alt); /* 修正：所有時間欄位使用統一背景色 */
 }
-
-/* 奇數行的時間欄位背景 */
-.custom-wordcamp-schedule-style .wordcamp-schedule__time-slot-header:nth-of-type(odd) {
-     background-color: var(--wcs-color-row-alt);
-}
-
 
 /* --- 議程區塊 --- */
 .custom-wordcamp-schedule-style .wordcamp-schedule__session {
     padding: 20px 24px;
     border-top: 1px solid var(--wcs-color-border);
-    background-color: var(--wcs-color-surface);
+    background-color: var(--wcs-color-surface); /* 修正：所有議程區塊使用統一背景色 */
     border-left: 1px solid var(--wcs-color-border);
 }
-
-/* 奇數行的議程區塊背景 */
-.custom-wordcamp-schedule-style .wordcamp-schedule__day > div:nth-of-type(odd) {
-    background-color: var(--wcs-color-row-alt);
-}
-.custom-wordcamp-schedule-style .wordcamp-schedule__day > div:nth-of-type(even) {
-    background-color: var(--wcs-color-surface);
-}
-
 
 /* --- 議程標題與內容 --- */
 .custom-wordcamp-schedule-style .wordcamp-schedule__session-title {
@@ -1007,5 +992,4 @@
 .custom-wordcamp-schedule-style .wordcamp-schedule > style {
     display: none;
 }
-
 
