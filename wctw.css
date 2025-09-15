@@ -834,12 +834,12 @@
     }
 }
 
-/* --- Custom Styles for WordCamp 2018 Schedule Table --- */
+/* --- Custom Styles for WordCamp Schedule Block --- */
 /* 將這些樣式放到您的遠端 CSS 檔案或「附加的 CSS」中 */
 
 /* ★★★ 安全開關：所有樣式都限定在這個自訂類別下 ★★★ */
-.custom-schedule-style-2018 .entry-content {
-    --wcs-font-family-inter: 'Inter', 'Noto Sans TC', sans-serif;
+.custom-wordcamp-schedule-style {
+    --wcs-font-family-inter: 'Inter', sans-serif;
     --wcs-color-text-primary: #111827;
     --wcs-color-text-secondary: #6B7280;
     --wcs-color-background: #F9FAFB;
@@ -848,24 +848,25 @@
     --wcs-color-primary: #4F46E5;
     --wcs-color-secondary: #818CF8;
     --wcs-color-accent: #F59E0B;
-    --wcs-color-row-alt: #E0E7FF; /* 稍深的偶數行顏色 */
+    --wcs-color-row-alt: #F3F4F6;
 }
 
 /* --- 基礎樣式重設 --- */
-.custom-schedule-style-2018 .wcpt-schedule {
-    font-family: var(--wcs-font-family-inter);
-    width: 100%;
-    border-collapse: separate; /* 改為 separate 以便使用 border-radius */
-    border-spacing: 0;
-    border: 1px solid var(--wcs-color-border);
+.custom-wordcamp-schedule-style .wordcamp-schedule {
+    font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    background-color: var(--wcs-color-background);
+    padding: 48px 16px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    overflow: hidden; /* 裁剪圓角 */
-    margin-top: 24px;
+    overflow: hidden;
 }
 
-/* --- 日期標題 (沿用主題樣式，但可自訂) --- */
-.custom-schedule-style-2018 .wp-block-heading {
+/* 移除區塊內嵌的 grid-template-rows，讓內容自然撐高 */
+.custom-wordcamp-schedule-style .wordcamp-schedule__day {
+    grid-template-rows: auto !important;
+}
+
+/* --- 日期標題 --- */
+.custom-wordcamp-schedule-style .wordcamp-schedule__date {
     font-family: var(--wcs-font-family-inter);
     font-size: clamp(1.25rem, 3vw, 1.5rem);
     font-weight: 500;
@@ -873,115 +874,138 @@
     margin: 0 auto 32px;
 }
 
-
 /* --- 表格頭部 (議程軌) --- */
-.custom-schedule-style-2018 .wcpt-schedule th {
+.custom-wordcamp-schedule-style .wordcamp-schedule__column-header {
     font-family: var(--wcs-font-family-inter);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
     color: white;
-    padding: 12px 16px;
+    padding: 12px 24px;
     text-align: center;
     white-space: nowrap;
-    border-bottom: 1px solid var(--wcs-color-border);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.custom-schedule-style-2018 .wcpt-schedule .wcpt-col-time { background-color: var(--wcs-color-primary); }
-.custom-schedule-style-2018 .wcpt-schedule .wcpt-col-track { background-color: var(--wcs-color-secondary); }
-.custom-schedule-style-2018 .wcpt-schedule th.wcpt-col-track:nth-of-type(3) { background-color: var(--wcs-color-primary); }
-.custom-schedule-style-2018 .wcpt-schedule th.wcpt-col-track:nth-of-type(4) { background-color: var(--wcs-color-accent); }
+.custom-wordcamp-schedule-style .wordcamp-schedule__column-header:first-of-type {
+    border-top-left-radius: 12px;
+    border-left: none;
+}
+.custom-wordcamp-schedule-style .wordcamp-schedule__column-header:last-of-type {
+    border-top-right-radius: 12px;
+}
 
 
-/* --- 表格儲存格 --- */
-.custom-schedule-style-2018 .wcpt-schedule td {
-    padding: 0;
-    vertical-align: top;
+/* --- 表頭顏色 --- */
+.custom-wordcamp-schedule-style .is-column-time { background-color: var(--wcs-color-primary); }
+.custom-wordcamp-schedule-style .is-column-track-304a,
+.custom-wordcamp-schedule-style .is-column-track-\e4\ba\9e\e7\81\a3\e6\96\b0\e5\89\b5\e5\9c\92 { /* "亞灣新創園" 的 CSS 編碼 */
+    background-color: var(--wcs-color-secondary);
+}
+.custom-wordcamp-schedule-style .is-column-track-304b { background-color: var(--wcs-color-primary); }
+
+
+/* --- 時間欄位 --- */
+.custom-wordcamp-schedule-style .wordcamp-schedule__time-slot-header {
+    font-family: var(--wcs-font-family-inter);
+    font-weight: 500;
+    font-size: 18px;
+    padding: 20px 24px;
+    text-align: center;
+    border-right: 1px solid var(--wcs-color-border);
     border-top: 1px solid var(--wcs-color-border);
+    background-color: var(--wcs-color-surface);
 }
 
-.custom-schedule-style-2018 .wcpt-schedule td[class*="wcb-track-"] {
+/* 奇數行的時間欄位背景 */
+.custom-wordcamp-schedule-style .wordcamp-schedule__time-slot-header:nth-of-type(odd) {
+     background-color: var(--wcs-color-row-alt);
+}
+
+
+/* --- 議程區塊 --- */
+.custom-wordcamp-schedule-style .wordcamp-schedule__session {
+    padding: 20px 24px;
+    border-top: 1px solid var(--wcs-color-border);
+    background-color: var(--wcs-color-surface);
     border-left: 1px solid var(--wcs-color-border);
 }
 
-/* --- 時間欄位 --- */
-.custom-schedule-style-2018 .wcpt-schedule .wcpt-time {
-    font-family: var(--wcs-font-family-inter);
-    font-weight: 500;
-    font-size: 16px;
-    padding: 20px 16px;
-    text-align: center;
-    vertical-align: middle;
-    width: 120px;
-    white-space: nowrap;
-}
-
-/* --- 議程區塊 --- */
-.custom-schedule-style-2018 .wcb-session-cell-content {
-    padding: 20px 24px;
-    min-height: 80px; /* 給予最小高度 */
-}
-
-/* --- 議程標題與講者 --- */
-.custom-schedule-style-2018 .wcpt-session-title {
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.5;
-    color: var(--wcs-color-text-primary);
-    text-decoration: none;
-    display: block;
-    margin-bottom: 8px;
-}
-.custom-schedule-style-2018 .wcpt-session-title:hover {
-    text-decoration: underline;
-    color: var(--wcs-color-primary);
-}
-
-.custom-schedule-style-2018 .wcpt-session-speakers,
-.custom-schedule-style-2018 .wcpt-session-speakers a {
-    font-size: 14px;
-    color: var(--wcs-color-text-secondary);
-    text-decoration: none;
-}
-.custom-schedule-style-2018 .wcpt-session-speakers a:hover {
-    text-decoration: underline;
-}
-
-/* --- 奇偶數行背景 --- */
-.custom-schedule-style-2018 .wcpt-schedule tbody tr:nth-child(even) > td {
+/* 奇數行的議程區塊背景 */
+.custom-wordcamp-schedule-style .wordcamp-schedule__day > div:nth-of-type(odd) {
     background-color: var(--wcs-color-row-alt);
 }
-.custom-schedule-style-2018 .wcpt-schedule tbody tr:nth-child(odd) > td {
+.custom-wordcamp-schedule-style .wordcamp-schedule__day > div:nth-of-type(even) {
     background-color: var(--wcs-color-surface);
 }
 
 
-/* --- 跨欄位的休息/用餐時段 --- */
-.custom-schedule-style-2018 .wcpt-schedule .global-session td {
+/* --- 議程標題與內容 --- */
+.custom-wordcamp-schedule-style .wordcamp-schedule__session-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0 0 4px 0;
+}
+.custom-wordcamp-schedule-style .wordcamp-schedule__session-title a {
+    color: inherit;
+    text-decoration: none;
+}
+.custom-wordcamp-schedule-style .wordcamp-schedule__session-title a:hover {
+    text-decoration: underline;
+}
+
+.custom-wordcamp-schedule-style .wordcamp-schedule__session-speakers {
+    font-size: 16px;
+    color: var(--wcs-color-text-secondary);
+    margin-top: 8px;
+}
+
+/* --- 議程分類 (模擬 Tag) --- */
+.custom-wordcamp-schedule-style .wordcamp-schedule__session-category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.custom-wordcamp-schedule-style .wordcamp-schedule__session-category dd {
+    font-family: var(--wcs-font-family-inter);
     font-weight: 500;
+    padding: 4px 16px;
+    border-radius: 9999px;
+    color: white;
+    background-color: var(--wcs-color-accent); /* 預設 Tag 顏色 */
+}
+/* 可以為特定分類增加顏色 */
+.custom-wordcamp-schedule-style .has-category-management .wordcamp-schedule__session-category dd {
+    background-color: #8B5CF6; /* Business */
+}
+.custom-wordcamp-schedule-style .has-category-beginner .wordcamp-schedule__session-category dd {
+    background-color: #E5E7EB; /* Beginner */
+    color: #1F2937;
+}
+
+/* --- 跨欄位的休息/用餐時段 --- */
+.custom-wordcamp-schedule-style .is-spanning-all-tracks {
     text-align: center;
-    vertical-align: middle;
-    background-color: #F3F4F6 !important; /* 強制使用統一的淺灰色 */
+    font-weight: 500;
+    background-color: var(--wcs-color-row-alt) !important; /* 強制覆蓋 */
 }
-.custom-schedule-style-2018 .wcpt-schedule .global-session .wcb-session-cell-content {
-    padding-top: 24px;
-    padding-bottom: 24px;
+
+/* 隱藏區塊預設的時間和 Track 資訊，因為我們已經有自己的樣式 */
+.custom-wordcamp-schedule-style .wordcamp-schedule__session > p,
+.custom-wordcamp-schedule-style .wordcamp-schedule__session-tracks {
+    display: none;
+}
+.custom-wordcamp-schedule-style .wcb-session-favourite-icon {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+/* --- 移除區塊內嵌的 style 標籤 --- */
+.custom-wordcamp-schedule-style .wordcamp-schedule > style {
+    display: none;
 }
 
 
-/* --- 移除不需要的元素 --- */
-.custom-schedule-style-2018 .wcb-session-favourite-icon,
-.custom-schedule-style-2018 .sharedaddy,
-.custom-schedule-style-2018 .fav-session-div-hide {
-    display: none !important;
-}
-
-/* --- 響應式：手機版讓表格可以水平捲動 --- */
-@media (max-width: 768px) {
-    .custom-schedule-style-2018 .entry-content {
-        overflow-x: auto; /* 讓內容可以水平捲動 */
-        -webkit-overflow-scrolling: touch; /* iOS 流暢捲動 */
-    }
-    .custom-schedule-style-2018 .wcpt-schedule {
-        min-width: 800px; /* 強制表格的最小寬度 */
-    }
-}
