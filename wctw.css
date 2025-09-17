@@ -78,7 +78,7 @@
   height: 100px !important;
   bottom: 30px !important;
   left: -100px !important;
-  background-image: url('https://taiwan.wordcamp.org/2025/files/2025/09/水手_黑色邊框_v1.png');
+  background-image: url('https://taiwan.wordcamp.org/2025/files/2025/09/水手_黑色邊框W_v1.png');
   background-size: contain !important;
   background-repeat: no-repeat !important;
   z-index: 10 !important; /* 在前面 */
@@ -992,4 +992,5 @@
 .custom-wordcamp-schedule-style .wordcamp-schedule > style {
     display: none;
 }
+
 
