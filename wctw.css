@@ -353,6 +353,45 @@
   }
 }
 
+/* 固定的太陽在左上角 */
+.sun {
+  position: absolute !important;
+  top: 10px !important;
+  left: 10px !important;
+  width: 100px !important;
+  height: 100px !important;
+  background-image: url('https://taiwan.wordcamp.org/2025/files/2025/09/太陽A_v1.png');
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  z-index: 100 !important; /* 確保太陽在最上層 */
+}
+
+/* 靜態燈塔 */
+.lighthouse {
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 180px !important;
+  width: 150px !important;
+  height: 200px !important;
+  background-image: url('https://taiwan.wordcamp.org/2025/files/2025/09/燈塔A_v1turn.png');
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  z-index: 1; /* 與冰山同層或略高 */
+}
+
+/* RWD 響應式設計 */
+@media (max-width: 768px) {
+  .sun {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  .lighthouse {
+    width: 100px !important;
+    height: 140px !important;
+    right: 100px !important;
+  }
+}
+
 /* --- WordCamp Taiwan 2025 Schedule Styles --- */
 /* 將這些樣式貼到「外觀」>「自訂」>「附加的 CSS」 */
 
@@ -992,5 +1031,6 @@
 .custom-wordcamp-schedule-style .wordcamp-schedule > style {
     display: none;
 }
+
 
 
