@@ -381,16 +381,53 @@
 
 /* RWD 響應式設計 */
 @media (max-width: 768px) {
-  .sun {
-    width: 70px !important;
-    height: 70px !important;
+  .ocean-container {
+    height: 150px !important;
   }
+  .floating-object, .sinking-object {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .floating-object {
+    animation-name: float-animation-mobile !important;
+  }
+  .sinking-object {
+    animation-name: sinking-animation-mobile !important;
+  }
+  .iceberg {
+    width: 120px !important;
+    height: 100px !important;
+    right: 10px !important;
+  }
+  .iceberg-2 {
+    width: 90px !important;
+    height: 70px !important;
+    right: 100px !important;
+  }
+  .iceberg-3 {
+    width: 60px !important;
+    height: 50px !important;
+    right: 5px !important;
+  }
+  .flying-fish, .flying-fish-2, .flying-fish-3 {
+    width: 50px !important;
+    height: 50px !important;
+    animation-name: fish-animation-mobile !important;
+  }
+
+  /* 太陽：尺寸縮小為50% */
+  .sun {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  /* 燈塔：位置調整至最右邊 */
   .lighthouse {
     width: 100px !important;
     height: 140px !important;
-    right: 100px !important;
+    right: 0px !important;
   }
-}
+  
 
 /* --- WordCamp Taiwan 2025 Schedule Styles --- */
 /* 將這些樣式貼到「外觀」>「自訂」>「附加的 CSS」 */
@@ -1031,6 +1068,7 @@
 .custom-wordcamp-schedule-style .wordcamp-schedule > style {
     display: none;
 }
+
 
 
 
