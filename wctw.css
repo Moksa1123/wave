@@ -690,9 +690,12 @@
     }
 }
 
-/* --- 基礎設定 --- */
-/* 將樣式限定在容器內，避免影響整個網站 */
-.wctw-sponsorship-container {
+/* 此處為修正後的 CSS 內容。
+  主要變更：在所有 .wctw-sponsorship-container 相關的選擇器前加上 `body`，
+  以提高其 CSS 權重，避免被 WordPress 佈景主題的樣式覆蓋。
+*/
+
+body .wctw-sponsorship-container {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f8fafc;
     color: #1e3a8a;
@@ -700,7 +703,7 @@
 }
 
 /* --- 版面佈局 --- */
-.wctw-sponsorship-container .container {
+body .wctw-sponsorship-container .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -708,7 +711,7 @@
     z-index: 1;
 }
 
-.wctw-sponsorship-container .page-header {
+body .wctw-sponsorship-container .page-header {
     text-align: center;
     margin-bottom: 40px;
     padding: 30px;
@@ -718,21 +721,20 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.wctw-sponsorship-container .ocean-title {
+body .wctw-sponsorship-container .ocean-title {
     font-size: 3rem;
     font-weight: bold;
     color: #1b4965;
     margin-bottom: 10px;
 }
 
-
-.wctw-sponsorship-container .subtitle {
+body .wctw-sponsorship-container .subtitle {
     font-size: 1.3rem;
     color: #62b6cb;
     font-style: italic;
 }
 
-.wctw-sponsorship-container .table-container {
+body .wctw-sponsorship-container .table-container {
     background: white;
     border-radius: 20px;
     padding: 30px;
@@ -741,45 +743,45 @@
     overflow-x: auto;
 }
 
-.wctw-sponsorship-container .sponsor-table {
+body .wctw-sponsorship-container .sponsor-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
     font-size: 1rem;
 }
 
-.wctw-sponsorship-container .sponsor-table th,
-.wctw-sponsorship-container .sponsor-table td {
+body .wctw-sponsorship-container .sponsor-table th,
+body .wctw-sponsorship-container .sponsor-table td {
     padding: 15px;
     text-align: center;
     border: 1px solid #e2e8f0;
     position: relative;
-    line-height: 1.5; /* Add line-height for better readability */
+    line-height: 1.5;
 }
 
-.wctw-sponsorship-container .sponsor-table th {
+body .wctw-sponsorship-container .sponsor-table th {
     background: #1b4965;
     color: white;
     font-weight: bold;
 }
 
-.wctw-sponsorship-container .plan-header {
+body .wctw-sponsorship-container .plan-header {
     background: #1b4965 !important;
     font-size: 1.2rem;
     border-top-left-radius: 15px;
 }
 
-.wctw-sponsorship-container .tier-name {
+body .wctw-sponsorship-container .tier-name {
     font-size: 1.1rem;
     position: relative;
     overflow: hidden;
 }
 
-.wctw-sponsorship-container .tier-name.sailboat { background: #cae9ff; color: #1b4965; }
-.wctw-sponsorship-container .tier-name.yacht { background: #bee9e8; color: #1b4965; }
-.wctw-sponsorship-container .tier-name.ferry { background: #5fa8d3; color: white; }
-.wctw-sponsorship-container .tier-name.cargo { background: #62b6cb; color: white; }
-.wctw-sponsorship-container .tier-name.cruise { 
+body .wctw-sponsorship-container .tier-name.sailboat { background: #cae9ff; color: #1b4965; }
+body .wctw-sponsorship-container .tier-name.yacht { background: #bee9e8; color: #1b4965; }
+body .wctw-sponsorship-container .tier-name.ferry { background: #5fa8d3; color: white; }
+body .wctw-sponsorship-container .tier-name.cargo { background: #62b6cb; color: white; }
+body .wctw-sponsorship-container .tier-name.cruise { 
     background: #1b4965;
     color: white;
     position: relative;
@@ -787,14 +789,14 @@
 }
 
 
-.wctw-sponsorship-container .price {
+body .wctw-sponsorship-container .price {
     font-size: 1.3rem;
     font-weight: bold;
     background: #bee9e8;
     color: #1b4965;
 }
 
-.wctw-sponsorship-container .price.highlighted {
+body .wctw-sponsorship-container .price.highlighted {
     background: #fb3640;
     color: white;
     font-weight: bold;
@@ -805,18 +807,18 @@
     50% { transform: scale(1.05); }
 }
 
-.wctw-sponsorship-container .sponsor-table tbody tr {
+body .wctw-sponsorship-container .sponsor-table tbody tr {
     background: #cae9ff;
     transition: all 0.3s ease;
 }
 
-.wctw-sponsorship-container .sponsor-table tbody tr:hover {
+body .wctw-sponsorship-container .sponsor-table tbody tr:hover {
     background: #bee9e8;
     transform: scale(1.02);
     box-shadow: 0 2px 8px rgba(27, 73, 101, 0.2);
 }
 
-.wctw-sponsorship-container .feature-name {
+body .wctw-sponsorship-container .feature-name {
     background: #ffba08 !important;
     color: #022f40;
     font-weight: 600;
@@ -825,20 +827,20 @@
     border-left: 4px solid #dab785;
 }
 
-.wctw-sponsorship-container .feature-value {
+body .wctw-sponsorship-container .feature-value {
     background: white;
     color: #1b4965;
     font-weight: 500;
 }
 
-.wctw-sponsorship-container .feature-value.included {
+body .wctw-sponsorship-container .feature-value.included {
     color: #10b981;
     font-weight: bold;
     font-size: 1.2rem;
     text-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
 }
 
-.wctw-sponsorship-container .feature-value.excluded {
+body .wctw-sponsorship-container .feature-value.excluded {
     color: #ef4444;
     font-weight: bold;
     font-size: 1.2rem;
@@ -846,67 +848,64 @@
 }
 
 
-.wctw-sponsorship-container .sponsor-table tbody tr:last-child td:first-child {
+body .wctw-sponsorship-container .sponsor-table tbody tr:last-child td:first-child {
     border-bottom-left-radius: 15px;
 }
 
-.wctw-sponsorship-container .sponsor-table tbody tr:last-child td:last-child {
+body .wctw-sponsorship-container .sponsor-table tbody tr:last-child td:last-child {
     border-bottom-right-radius: 15px;
 }
 
 @media (max-width: 768px) {
-    .wctw-sponsorship-container .ocean-title {
+    body .wctw-sponsorship-container .ocean-title {
         font-size: 2rem;
     }
     
-    .wctw-sponsorship-container .container {
+    body .wctw-sponsorship-container .container {
         padding: 10px;
     }
     
-    .wctw-sponsorship-container .page-header {
+    body .wctw-sponsorship-container .page-header {
         padding: 20px;
     }
     
-    .wctw-sponsorship-container .table-container {
+    body .wctw-sponsorship-container .table-container {
         padding: 15px;
         overflow-x: auto;
     }
     
-    .wctw-sponsorship-container .sponsor-table {
+    body .wctw-sponsorship-container .sponsor-table {
         min-width: 800px;
     }
     
-    .wctw-sponsorship-container .sponsor-table th,
-    .wctw-sponsorship-container .sponsor-table td {
+    body .wctw-sponsorship-container .sponsor-table th,
+    body .wctw-sponsorship-container .sponsor-table td {
         padding: 8px 4px;
         font-size: 0.9rem;
     }
     
-    .wctw-sponsorship-container .tier-name {
+    body .wctw-sponsorship-container .tier-name {
         font-size: 0.9rem;
     }
     
-    .wctw-sponsorship-container .price {
+    body .wctw-sponsorship-container .price {
         font-size: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .wctw-sponsorship-container .ocean-title {
+    body .wctw-sponsorship-container .ocean-title {
         font-size: 1.5rem;
     }
     
-    .wctw-sponsorship-container .subtitle {
+    body .wctw-sponsorship-container .subtitle {
         font-size: 1rem;
     }
     
-    .wctw-sponsorship-container .sponsor-table th,
-    .wctw-sponsorship-container .sponsor-table td {
+    body .wctw-sponsorship-container .sponsor-table th,
+    body .wctw-sponsorship-container .sponsor-table td {
         padding: 6px 2px;
         font-size: 0.8rem;
     }
 }
-
-
-
 
