@@ -783,7 +783,7 @@
 .wctw-sponsorship-container .tier-name.yacht { background: #bee9e8; color: #1b4965; }
 .wctw-sponsorship-container .tier-name.ferry { background: #5fa8d3; color: white; }
 .wctw-sponsorship-container .tier-name.cargo { background: #62b6cb; color: white; }
-.wctw-sponsorship-container .tier-name.cruise { 
+.wctw-sponsorship-container .tier-name.cruise {
     background: #1b4965;
     color: white;
     position: relative;
@@ -909,3 +909,4 @@
         font-size: 0.8rem;
     }
 }
+
