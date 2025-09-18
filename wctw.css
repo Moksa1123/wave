@@ -690,12 +690,14 @@
     }
 }
 
-/* 此處為修正後的 CSS 內容。
-  主要變更：在所有 .wctw-sponsorship-container 相關的選擇器前加上 `body`，
-  以提高其 CSS 權重，避免被 WordPress 佈景主題的樣式覆蓋。
+/*
+ * 此版本移除了所有可能造成全域衝突的樣式，
+ * 並確保所有規則都限定在 .wctw-sponsorship-container 內，
+ * 以解決整個頁面排版錯亂的問題。
 */
 
-body .wctw-sponsorship-container {
+/* --- 基礎設定 --- */
+.wctw-sponsorship-container {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f8fafc;
     color: #1e3a8a;
@@ -703,7 +705,7 @@ body .wctw-sponsorship-container {
 }
 
 /* --- 版面佈局 --- */
-body .wctw-sponsorship-container .container {
+.wctw-sponsorship-container .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -711,7 +713,7 @@ body .wctw-sponsorship-container .container {
     z-index: 1;
 }
 
-body .wctw-sponsorship-container .page-header {
+.wctw-sponsorship-container .page-header {
     text-align: center;
     margin-bottom: 40px;
     padding: 30px;
@@ -721,20 +723,21 @@ body .wctw-sponsorship-container .page-header {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-body .wctw-sponsorship-container .ocean-title {
+.wctw-sponsorship-container .ocean-title {
     font-size: 3rem;
     font-weight: bold;
     color: #1b4965;
     margin-bottom: 10px;
 }
 
-body .wctw-sponsorship-container .subtitle {
+.wctw-sponsorship-container .subtitle {
     font-size: 1.3rem;
     color: #62b6cb;
     font-style: italic;
 }
 
-body .wctw-sponsorship-container .table-container {
+/* --- 表格容器 --- */
+.wctw-sponsorship-container .table-container {
     background: white;
     border-radius: 20px;
     padding: 30px;
@@ -743,15 +746,16 @@ body .wctw-sponsorship-container .table-container {
     overflow-x: auto;
 }
 
-body .wctw-sponsorship-container .sponsor-table {
+/* --- 表格樣式 --- */
+.wctw-sponsorship-container .sponsor-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
     font-size: 1rem;
 }
 
-body .wctw-sponsorship-container .sponsor-table th,
-body .wctw-sponsorship-container .sponsor-table td {
+.wctw-sponsorship-container .sponsor-table th,
+.wctw-sponsorship-container .sponsor-table td {
     padding: 15px;
     text-align: center;
     border: 1px solid #e2e8f0;
@@ -759,44 +763,43 @@ body .wctw-sponsorship-container .sponsor-table td {
     line-height: 1.5;
 }
 
-body .wctw-sponsorship-container .sponsor-table th {
+.wctw-sponsorship-container .sponsor-table th {
     background: #1b4965;
     color: white;
     font-weight: bold;
 }
 
-body .wctw-sponsorship-container .plan-header {
+.wctw-sponsorship-container .plan-header {
     background: #1b4965 !important;
     font-size: 1.2rem;
     border-top-left-radius: 15px;
 }
 
-body .wctw-sponsorship-container .tier-name {
+.wctw-sponsorship-container .tier-name {
     font-size: 1.1rem;
     position: relative;
     overflow: hidden;
 }
 
-body .wctw-sponsorship-container .tier-name.sailboat { background: #cae9ff; color: #1b4965; }
-body .wctw-sponsorship-container .tier-name.yacht { background: #bee9e8; color: #1b4965; }
-body .wctw-sponsorship-container .tier-name.ferry { background: #5fa8d3; color: white; }
-body .wctw-sponsorship-container .tier-name.cargo { background: #62b6cb; color: white; }
-body .wctw-sponsorship-container .tier-name.cruise { 
+.wctw-sponsorship-container .tier-name.sailboat { background: #cae9ff; color: #1b4965; }
+.wctw-sponsorship-container .tier-name.yacht { background: #bee9e8; color: #1b4965; }
+.wctw-sponsorship-container .tier-name.ferry { background: #5fa8d3; color: white; }
+.wctw-sponsorship-container .tier-name.cargo { background: #62b6cb; color: white; }
+.wctw-sponsorship-container .tier-name.cruise { 
     background: #1b4965;
     color: white;
     position: relative;
     border-top-right-radius: 15px;
 }
 
-
-body .wctw-sponsorship-container .price {
+.wctw-sponsorship-container .price {
     font-size: 1.3rem;
     font-weight: bold;
     background: #bee9e8;
     color: #1b4965;
 }
 
-body .wctw-sponsorship-container .price.highlighted {
+.wctw-sponsorship-container .price.highlighted {
     background: #fb3640;
     color: white;
     font-weight: bold;
@@ -807,18 +810,18 @@ body .wctw-sponsorship-container .price.highlighted {
     50% { transform: scale(1.05); }
 }
 
-body .wctw-sponsorship-container .sponsor-table tbody tr {
+.wctw-sponsorship-container .sponsor-table tbody tr {
     background: #cae9ff;
     transition: all 0.3s ease;
 }
 
-body .wctw-sponsorship-container .sponsor-table tbody tr:hover {
+.wctw-sponsorship-container .sponsor-table tbody tr:hover {
     background: #bee9e8;
     transform: scale(1.02);
     box-shadow: 0 2px 8px rgba(27, 73, 101, 0.2);
 }
 
-body .wctw-sponsorship-container .feature-name {
+.wctw-sponsorship-container .feature-name {
     background: #ffba08 !important;
     color: #022f40;
     font-weight: 600;
@@ -827,83 +830,89 @@ body .wctw-sponsorship-container .feature-name {
     border-left: 4px solid #dab785;
 }
 
-body .wctw-sponsorship-container .feature-value {
+.wctw-sponsorship-container .feature-value {
     background: white;
     color: #1b4965;
     font-weight: 500;
 }
 
-body .wctw-sponsorship-container .feature-value.included {
+.wctw-sponsorship-container .feature-value.included {
     color: #10b981;
     font-weight: bold;
     font-size: 1.2rem;
     text-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
 }
 
-body .wctw-sponsorship-container .feature-value.excluded {
+.wctw-sponsorship-container .feature-value.included img.emoji {
+    height: 1.2rem;
+    width: 1.2rem;
+    filter: grayscale(1) brightness(0.5) sepia(1) hue-rotate(80deg) saturate(5);
+}
+
+.wctw-sponsorship-container .feature-value.excluded {
     color: #ef4444;
     font-weight: bold;
     font-size: 1.2rem;
     text-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
 }
 
-
-body .wctw-sponsorship-container .sponsor-table tbody tr:last-child td:first-child {
+.wctw-sponsorship-container .sponsor-table tbody tr:last-child td:first-child {
     border-bottom-left-radius: 15px;
 }
 
-body .wctw-sponsorship-container .sponsor-table tbody tr:last-child td:last-child {
+.wctw-sponsorship-container .sponsor-table tbody tr:last-child td:last-child {
     border-bottom-right-radius: 15px;
 }
 
+/* --- 響應式調整 --- */
 @media (max-width: 768px) {
-    body .wctw-sponsorship-container .ocean-title {
+    .wctw-sponsorship-container .ocean-title {
         font-size: 2rem;
     }
     
-    body .wctw-sponsorship-container .container {
+    .wctw-sponsorship-container .container {
         padding: 10px;
     }
     
-    body .wctw-sponsorship-container .page-header {
+    .wctw-sponsorship-container .page-header {
         padding: 20px;
     }
     
-    body .wctw-sponsorship-container .table-container {
+    .wctw-sponsorship-container .table-container {
         padding: 15px;
         overflow-x: auto;
     }
     
-    body .wctw-sponsorship-container .sponsor-table {
+    .wctw-sponsorship-container .sponsor-table {
         min-width: 800px;
     }
     
-    body .wctw-sponsorship-container .sponsor-table th,
-    body .wctw-sponsorship-container .sponsor-table td {
+    .wctw-sponsorship-container .sponsor-table th,
+    .wctw-sponsorship-container .sponsor-table td {
         padding: 8px 4px;
         font-size: 0.9rem;
     }
     
-    body .wctw-sponsorship-container .tier-name {
+    .wctw-sponsorship-container .tier-name {
         font-size: 0.9rem;
     }
     
-    body .wctw-sponsorship-container .price {
+    .wctw-sponsorship-container .price {
         font-size: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
-    body .wctw-sponsorship-container .ocean-title {
+    .wctw-sponsorship-container .ocean-title {
         font-size: 1.5rem;
     }
     
-    body .wctw-sponsorship-container .subtitle {
+    .wctw-sponsorship-container .subtitle {
         font-size: 1rem;
     }
     
-    body .wctw-sponsorship-container .sponsor-table th,
-    body .wctw-sponsorship-container .sponsor-table td {
+    .wctw-sponsorship-container .sponsor-table th,
+    .wctw-sponsorship-container .sponsor-table td {
         padding: 6px 2px;
         font-size: 0.8rem;
     }
