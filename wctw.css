@@ -698,29 +698,36 @@
 */
 
 /* --- 基礎設定 (桌機預設樣式) --- */
-.entry-content .wctw-sponsorship-container {
+/*
+ * WordCamp Taiwan Sponsorship Tiers Styles (Final Version)
+ * This version is designed to be safe and avoid conflicts with WordPress themes.
+ * It only contains styles for the .wctw-sponsorship-container block.
+*/
+
+/* --- Main Container --- */
+.wctw-sponsorship-container {
     background: #f8fafc;
     color: #1e3a8a;
     padding: 20px 0;
+    font-family: sans-serif; /* Inherit theme font */
 }
 
-/* 強制 box-sizing 避免尺寸計算衝突 */
-.entry-content .wctw-sponsorship-container *,
-.entry-content .wctw-sponsorship-container *::before,
-.entry-content .wctw-sponsorship-container *::after {
+/* Universal box-sizing for consistency */
+.wctw-sponsorship-container *,
+.wctw-sponsorship-container *::before,
+.wctw-sponsorship-container *::after {
     box-sizing: border-box;
 }
 
-/* --- 版面佈局 --- */
-.entry-content .wctw-sponsorship-container .container {
-    max-width: 100%;
+/* --- Layout --- */
+.wctw-sponsorship-container .container {
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    position: relative;
-    z-index: 1;
 }
 
-.entry-content .wctw-sponsorship-container .page-header {
+.wctw-sponsorship-container .page-header {
     text-align: center;
     margin-bottom: 40px;
     padding: 30px;
@@ -730,21 +737,21 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.entry-content .wctw-sponsorship-container .ocean-title {
+.wctw-sponsorship-container .ocean-title {
     font-size: 3rem;
     font-weight: bold;
     color: #1b4965;
     margin-bottom: 10px;
 }
 
-.entry-content .wctw-sponsorship-container .subtitle {
+.wctw-sponsorship-container .subtitle {
     font-size: 1.3rem;
     color: #62b6cb;
     font-style: italic;
 }
 
-/* --- 表格容器 --- */
-.entry-content .wctw-sponsorship-container .table-container {
+/* --- Table Styles --- */
+.wctw-sponsorship-container .table-container {
     background: white;
     border-radius: 20px;
     padding: 30px;
@@ -753,82 +760,65 @@
     overflow-x: auto;
 }
 
-/* --- 表格樣式 --- */
-.entry-content .wctw-sponsorship-container .sponsor-table {
+.wctw-sponsorship-container .sponsor-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
     font-size: 1rem;
 }
 
-.entry-content .wctw-sponsorship-container .sponsor-table th,
-.entry-content .wctw-sponsorship-container .sponsor-table td {
+.wctw-sponsorship-container .sponsor-table th,
+.wctw-sponsorship-container .sponsor-table td {
     padding: 15px;
     text-align: center;
     border: 1px solid #e2e8f0;
-    position: relative;
     line-height: 1.5;
 }
 
-.entry-content .wctw-sponsorship-container .sponsor-table th {
+.wctw-sponsorship-container .sponsor-table th {
     background: #1b4965;
     color: white;
     font-weight: bold;
 }
 
-.entry-content .wctw-sponsorship-container .plan-header {
+.wctw-sponsorship-container .plan-header {
     background: #1b4965 !important;
     font-size: 1.2rem;
     border-top-left-radius: 15px;
 }
 
-.entry-content .wctw-sponsorship-container .tier-name {
+.wctw-sponsorship-container .tier-name {
     font-size: 1.1rem;
-    position: relative;
-    overflow: hidden;
 }
 
-.entry-content .wctw-sponsorship-container .tier-name.sailboat { background: #cae9ff; color: #1b4965; }
-.entry-content .wctw-sponsorship-container .tier-name.yacht { background: #bee9e8; color: #1b4965; }
-.entry-content .wctw-sponsorship-container .tier-name.ferry { background: #5fa8d3; color: white; }
-.entry-content .wctw-sponsorship-container .tier-name.cargo { background: #62b6cb; color: white; }
-.entry-content .wctw-sponsorship-container .tier-name.cruise { 
+.wctw-sponsorship-container .tier-name.sailboat { background: #cae9ff; color: #1b4965; }
+.wctw-sponsorship-container .tier-name.yacht { background: #bee9e8; color: #1b4965; }
+.wctw-sponsorship-container .tier-name.ferry { background: #5fa8d3; color: white; }
+.wctw-sponsorship-container .tier-name.cargo { background: #62b6cb; color: white; }
+.wctw-sponsorship-container .tier-name.cruise { 
     background: #1b4965;
     color: white;
-    position: relative;
     border-top-right-radius: 15px;
 }
 
-.entry-content .wctw-sponsorship-container .price {
+.wctw-sponsorship-container .price {
     font-size: 1.3rem;
     font-weight: bold;
     background: #bee9e8;
     color: #1b4965;
 }
 
-.entry-content .wctw-sponsorship-container .price.highlighted {
-    background: #fb3640;
-    color: white;
-    font-weight: bold;
+.wctw-sponsorship-container .sponsor-table tbody tr {
+    background: #f0f9ff;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+.wctw-sponsorship-container .sponsor-table tbody tr:hover {
+    background: #e0f2f1;
+    transform: scale(1.01);
 }
 
-.entry-content .wctw-sponsorship-container .sponsor-table tbody tr {
-    background: #cae9ff;
-    transition: all 0.3s ease;
-}
-
-.entry-content .wctw-sponsorship-container .sponsor-table tbody tr:hover {
-    background: #bee9e8;
-    transform: scale(1.02);
-    box-shadow: 0 2px 8px rgba(27, 73, 101, 0.2);
-}
-
-.entry-content .wctw-sponsorship-container .feature-name {
+.wctw-sponsorship-container .feature-name {
     background: #ffba08 !important;
     color: #022f40;
     font-weight: 600;
@@ -837,108 +827,69 @@
     border-left: 4px solid #dab785;
 }
 
-.entry-content .wctw-sponsorship-container .feature-value {
+.wctw-sponsorship-container .feature-value {
     background: white;
     color: #1b4965;
     font-weight: 500;
 }
 
-.entry-content .wctw-sponsorship-container .feature-value.included {
+.wctw-sponsorship-container .feature-value.included {
     color: #10b981;
     font-weight: bold;
     font-size: 1.2rem;
-    text-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
 }
 
-.entry-content .wctw-sponsorship-container .feature-value.included img.emoji {
-    height: 1.2rem;
-    width: 1.2rem;
-    filter: grayscale(1) brightness(0.5) sepia(1) hue-rotate(80deg) saturate(5);
-}
-
-.entry-content .wctw-sponsorship-container .feature-value.excluded {
+.wctw-sponsorship-container .feature-value.excluded {
     color: #ef4444;
     font-weight: bold;
     font-size: 1.2rem;
-    text-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
 }
 
-.entry-content .wctw-sponsorship-container .sponsor-table tbody tr:last-child td:first-child {
+.wctw-sponsorship-container .sponsor-table tbody tr:last-child td:first-child {
     border-bottom-left-radius: 15px;
 }
 
-.entry-content .wctw-sponsorship-container .sponsor-table tbody tr:last-child td:last-child {
+.wctw-sponsorship-container .sponsor-table tbody tr:last-child td:last-child {
     border-bottom-right-radius: 15px;
 }
 
-/* --- 響應式調整 (三段式結構) --- */
-
-/* --- 平板 (768px ~ 1024px) --- */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .entry-content .wctw-sponsorship-container .ocean-title {
-      font-size: 2.5rem;
-  }
-  .entry-content .wctw-sponsorship-container .container {
-      padding: 15px;
-  }
-  .entry-content .wctw-sponsorship-container .page-header {
-      padding: 25px;
-  }
-  .entry-content .wctw-sponsorship-container .table-container {
-      padding: 20px;
-  }
-  .entry-content .wctw-sponsorship-container .sponsor-table th,
-  .entry-content .wctw-sponsorship-container .sponsor-table td {
-      padding: 12px 8px;
-      font-size: 0.95rem;
-  }
-}
-
-/* --- 手機 (767px 以下) --- */
-@media (max-width: 767px) {
-    .entry-content .wctw-sponsorship-container .ocean-title {
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .wctw-sponsorship-container .ocean-title {
         font-size: 2rem;
     }
-    .entry-content .wctw-sponsorship-container .container {
-        padding: 10px;
+    .wctw-sponsorship-container .container,
+    .wctw-sponsorship-container .table-container {
+        padding: 15px;
     }
-    .entry-content .wctw-sponsorship-container .page-header {
+    .wctw-sponsorship-container .page-header {
         padding: 20px;
     }
-    .entry-content .wctw-sponsorship-container .table-container {
-        padding: 15px;
-        overflow-x: auto;
-    }
-    .entry-content .wctw-sponsorship-container .sponsor-table {
+    .wctw-sponsorship-container .sponsor-table {
         min-width: 800px;
     }
-    .entry-content .wctw-sponsorship-container .sponsor-table th,
-    .entry-content .wctw-sponsorship-container .sponsor-table td {
+    .wctw-sponsorship-container .sponsor-table th,
+    .wctw-sponsorship-container .sponsor-table td {
         padding: 8px 4px;
         font-size: 0.9rem;
     }
-    .entry-content .wctw-sponsorship-container .tier-name {
-        font-size: 0.9rem;
-    }
-    .entry-content .wctw-sponsorship-container .price {
-        font-size: 1.1rem;
-    }
 }
 
-/* --- 小手機 (480px 以下) --- */
 @media (max-width: 480px) {
-    .entry-content .wctw-sponsorship-container .ocean-title {
+    .wctw-sponsorship-container .ocean-title {
         font-size: 1.5rem;
     }
-    .entry-content .wctw-sponsorship-container .subtitle {
+    .wctw-sponsorship-container .subtitle {
         font-size: 1rem;
     }
-    .entry-content .wctw-sponsorship-container .sponsor-table th,
-    .entry-content .wctw-sponsorship-container .sponsor-table td {
+    .wctw-sponsorship-container .sponsor-table th,
+    .wctw-sponsorship-container .sponsor-table td {
         padding: 6px 2px;
         font-size: 0.8rem;
     }
 }
+
+
 
 
 
