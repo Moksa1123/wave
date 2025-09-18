@@ -713,7 +713,7 @@
 
 /* --- 版面佈局 --- */
 .entry-content .wctw-sponsorship-container .container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
     position: relative;
@@ -939,6 +939,7 @@
         font-size: 0.8rem;
     }
 }
+
 
 
 
