@@ -809,14 +809,14 @@
 }
 
 .wctw-sponsorship-container .sponsor-table tbody tr {
-    background: #cae9ff;
+    background: #f0f9ff; /* Adjusted for better contrast */
     transition: all 0.3s ease;
 }
 
 .wctw-sponsorship-container .sponsor-table tbody tr:hover {
-    background: #bee9e8;
-    transform: scale(1.02);
-    box-shadow: 0 2px 8px rgba(27, 73, 101, 0.2);
+    background: #e0f2f1;
+    transform: scale(1.01); /* Subtle hover effect */
+    box-shadow: 0 4px 12px rgba(27, 73, 101, 0.15);
 }
 
 .wctw-sponsorship-container .feature-name {
@@ -909,4 +909,3 @@
         font-size: 0.8rem;
     }
 }
-
